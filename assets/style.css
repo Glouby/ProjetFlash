@@ -1,8 +1,8 @@
 body{
-    background-image: url("../image/memory_hero.png");
+    background-image: url("../image/memory_hero.jpeg");
     background-size: 1450px 750px; /* Définissez la taille souhaitée */
     background-repeat: no-repeat;
-    background-color: #00113f;
+    background-color: #100e2e;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -18,6 +18,8 @@ header {
     align-items: center;
     width: 100%;
     padding: 10px;
+    margin: 0;
+    padding: 0 50 20;
 }
 
 .menu-links {
@@ -25,23 +27,63 @@ header {
     align-items: center;
 }
 
+
+
+ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
 a {
     color: white;
-    margin-right: 10px;
+    margin: 0 25px;
     text-decoration: none;
+    font-size: 12;
+    text-align: center;
 }
-
-a:hover {
-    color: orange;
+li{
+    padding: 25px 0 0 0;
+}
+li:hover {
+    
     transition-duration: 0.8s;
-    text-decoration: overline orange;
+    border-top: solid orange;
 }
-
+li:hover a{
+    color: orange;
+}
 h1 {
     color: white;
     font-size: small;
+    padding: 20 0 0 0;
+    margin: 0;
 }
 
 p {
     color: white;
+}
+h2 {
+    font-size: 85;
+    color: white;
+    text-align: center;
+    padding: 200 0 0 0;
+    margin: 0 auto;
+    width: 50%;
+}
+.play-button-container {
+    display: flex;
+    justify-content: center; /* Aligne le bouton horizontalement au centre */
+    align-items: flex-end; /* Aligne le bouton en bas */
+}
+
+.play-button {
+    width: 120px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 14;
 }
