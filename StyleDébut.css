@@ -6,29 +6,96 @@ body {
     
     display: flex;
     justify-content: center;
-   font-size: 1.5em;
-  color: white;
+    color: white;
+    margin: 0px -8px;
    background-image:  url(Capture_decran_2023-10-17_a_14.32.08.png);
    background-repeat: no-repeat;
    background-size: cover;
    padding: 50px;
+   text-align: center
 }
 .id-connexion { 
     display: flex;
-    margin: auto;
+    margin: 5px auto;
     width: 500px;
     height: 40px;
-    background-color: #8c6cb4;
+    color: #ddd3e9;
+    background-color: rgba(140, 108, 180, 0.7);
+    border-radius: 2px;
+    border: 0;
+    padding-left: 20px;
+}
+
+.Space {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
 }
 
 input::placeholder{
-    color: black;
+    color: rgba(221, 211, 233)
 }
 
 .bouton {
+    margin: 13px 53px;
     display: flex;
-    padding: 5px;
+    width: 100px;
+    height: 50px;
     background-color: dodgerblue;
-    color: #000000;
-    margin: auto;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    padding: 0 50 20;
+}
+.menu-links {
+    display: flex;
+    align-items: center;
+}
+
+
+
+ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+a {
+    color: white;
+    margin: 0 25px;
+    text-decoration: none;
+    font-size: 12;
+    text-align: center;
+}
+li{
+    padding: 25px 0 0 0;
+}
+li:hover {
+    
+    transition-duration: 0.8s;
+    border-top: solid orange;
+}
+li:hover a{
+    color: orange;
+}
+#memory {
+    color: white;
+    font-size: small;
+    padding: 20 0 0 0;
+    margin: 0;
 }
