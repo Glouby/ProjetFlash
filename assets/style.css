@@ -1,7 +1,47 @@
 body{
-    background-color: #Cde5d5;
+    background-image: url("../image/memory_hero.png");
+    background-size: 1450px 750px; /* Définissez la taille souhaitée */
+    background-repeat: no-repeat;
+    background-color: #00113f;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-a{
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    transition-duration: 0.8s;
+    text-decoration: overline orange;
+}
+
+h1 {
+    color: white;
+    font-size: small;
+}
+
+p {
     color: white;
 }
