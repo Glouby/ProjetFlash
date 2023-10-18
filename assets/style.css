@@ -1,57 +1,13 @@
-body{
+.index {
     background-image: url("../image/memory_hero.jpeg");
-    background-size: 1450px 850px; /* Définissez la taille souhaitée */
+    background-size: 1450px 850px;
     background-repeat: no-repeat;
     background-color: #100e2e;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
 
-.lien {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-    padding: 0 100 20;
-}
-
-.menu-links {
-    display: flex;
-    align-items: center;
-}
-
-
-
-ul{
-    display: flex;
-    list-style: none;
-    margin: 0;
-}
-a {
-    color: white;
-    margin: 0 25px;
-    text-decoration: none;
-    font-size: 12;
-    text-align: center;
-}
-li {
-    padding: 25px 0 0 0;
-}
-li:hover {
-    transition-duration: 0.5s;
-    border-top: solid #ec9123;
-}
-li:hover a{
-    color: #ec9123;
-}
-h1 {
+.index h1 {
     color: white;
     font-size: small;
     padding: 20 0 0 0;
@@ -62,7 +18,8 @@ p {
     color: white;
     font-size: small;
 }
-h2 {
+
+.index h2 {
     font-size: 85;
     color: white;
     text-align: center;
@@ -70,13 +27,14 @@ h2 {
     margin: 0 auto;
     width: 50%;
 }
-.play-button-container {
+
+.index .play-button-container {
     display: flex;
-    justify-content: center; /* Aligne le bouton horizontalement au centre */
-    align-items: flex-end; /* Aligne le bouton en bas */
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.play-button {
+.index .play-button {
     width: 120px;
     height: 40px;
     background-color: #ec9123;
@@ -87,11 +45,12 @@ h2 {
     line-height: 40px;
     font-size: 14;
 }
-.image {
+
+.index .image {
     display: flex;
-    
 }
-.bloc {
+
+.index .bloc {
     display: flex;
     width: 50%;
     color: white;
@@ -99,144 +58,163 @@ h2 {
     align-items: baseline;
     font-size: small;
 }
-.texte_bloc{
+
+.index .texte_bloc {
     display: flex;
     margin: 0 170;
 }
 
-.nb {
+.index .nb {
     font-size: 30;
-    /* width: 100%; */
     color: #3724a0;
     font-weight: 600;
     margin: 0 10 0 0;
 }
-.gras{
+
+.index .gras {
     font-weight: 600;
-    font-size:medium;
+    font-size: medium;
 }
-.community{
+
+.index .community {
     display: flex;
 }
-.ligne_1{
+
+.index .ligne_1 {
     display: flex;
 }
-.ligne_2{
+
+.index .ligne_2 {
     display: flex;
-    
 }
-.part_2{
+
+.index .part_2 {
     display: flex;
     flex-direction: column;
 }
-.case_1{
+
+.index .case_1 {
     height: 120px;
     width: 200px;
     background-color: #3724a0;
     text-align: center;
-    margin: 0 10 20
+    margin: 0 10 20;
 }
-.case_2{
+
+.index .case_2 {
     height: 120px;
     width: 200px;
     background-color: #18a15f;
     text-align: center;
-    margin: 0 10 20
+    margin: 0 10 20;
 }
-.case_3{
+
+.index .case_3 {
     height: 120px;
     width: 200px;
     background-color: #b91ca8;
     text-align: center;
-    margin: 0 10 20
+    margin: 0 10 20;
 }
-.case_4{
+
+.index .case_4 {
     height: 120px;
     width: 200px;
     background-color: #ec9123;
     text-align: center;
-    margin: 0 10 20
+    margin: 0 10 20;
 }
-.img{
+
+.index .img {
     height: 300;
     width: 500;
     padding: 0 20 0 200;
 }
-.gros_nb{
+
+.index .gros_nb {
     font-size: xx-large;
     font-weight: 600;
 }
 
-/* FOOTER*/
-
-footer {
-    background-color: #0d0b26;
-    width: 100vw;
-    height: 43vh;
-}
-
-.orange {
-    color: #ec9123;
-}
-
-.info {
-    color: rgb(188, 181, 181); 
-}
-
-.info1 {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 80px;
-    color: #ec9123;
-}
-
-
-.list-info {
-    padding: 0;
-    width: 300px;
-    flex-direction: column;
-    list-style: square;
-}
-
-
-.logo-info {
-    font-size: 30px;
-    display: flex;
-}
-
-.logo {
-    padding-right: 15px;
-}
-
-.underline {
-    color: rgb(188, 181, 181); 
-}
-
-.location {
-    text-decoration: none;
-    color: rgb(188, 181, 181);
-}
-
-.notre_equipe {
+.index .notre_equipe {
     display: flex;
     margin: 0 0 100 400;
 }
 
-.rectangle {
+.index .rectangle {
     height: 250px;
     width: 200px;
     background-color: #0d0b26;
     margin: 0 15 0 0;
 }
-.centre{
-    display: flex; 
+
+.index .centre {
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
-.petit{
+
+.index .petit {
     margin: 15;
 }
-.grand{
+
+.index .grand {
     margin: 15 0 0 0;
 }
+
+
+
+.register {
+    background-color: #100e2e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.register .title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 120px;
+    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
+    background-size: cover;
+    /* height: 50px; */
+}
+
+.register .cases {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; 
+}
+
+.register form div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.register .box {
+    padding: 15px ;
+    padding-right: 200px;
+    border: 0;
+    border-radius: 2px;
+    background-color: #373654;
+}
+
+.register .bouton {
+    /* padding-left: 2px; */
+    background-color: #ec9123;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    width: 115px;
+    height: 45px;
+}
+
+.register input {
+    width: 20vw;
+}
+
+.register ::placeholder {
+    color: #888486;
+}
+

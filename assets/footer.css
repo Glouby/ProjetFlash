@@ -1,0 +1,52 @@
+footer {
+    margin-top: 100px;
+    background-color: #0d0b26;
+    width: 100vw;
+    height: 43vh;
+}
+
+span {
+    color: #ec9123;
+}
+
+.info {
+    color: rgb(188, 181, 181); 
+}
+
+.title-info {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.info1 {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 80px;
+    color: #ec9123;
+}
+
+.list-info {
+    padding: 0;
+    width: 300px;
+    flex-direction: column;
+    list-style: square;
+}
+
+.logo-info {
+    font-size: 30px;
+    display: flex;
+}
+
+.logo {
+    padding-right: 15px;
+}
+
+.underline {
+    color: rgb(188, 181, 181); 
+}
+
+.location {
+    text-decoration: none;
+    color: rgb(188, 181, 181);
+}

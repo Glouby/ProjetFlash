@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    padding: 0 100px 20px;
+}
+.menu-links {
+    display: flex;
+    align-items: center;
+}
+
+
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+a {
+    color: white;
+    margin: 0 25px;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+}
+li {
+    padding: 25px 0 0 0;
+}
+li:hover {
+    transition-duration: 0.5s;
+    border-top: solid #ec9123;
+}
+li:hover a {
+    color: #ec9123;
+}
+.tete {
+    color: white;
+    font-size: small;
+    padding: 20px 0 0 0;
+    margin: 0;
+    font-weight: 600;
+}
