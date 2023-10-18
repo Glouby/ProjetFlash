@@ -60,6 +60,7 @@ h1 {
 
 p {
     color: white;
+    font-size: small;
 }
 h2 {
     font-size: 85;
@@ -110,7 +111,7 @@ h2 {
     font-weight: 600;
     margin: 0 10 0 0;
 }
-span{
+.gras{
     font-weight: 600;
     font-size:medium;
 }
@@ -166,3 +167,76 @@ span{
     font-weight: 600;
 }
 
+/* FOOTER*/
+
+footer {
+    background-color: #0d0b26;
+    width: 100vw;
+    height: 43vh;
+}
+
+.orange {
+    color: #ec9123;
+}
+
+.info {
+    color: rgb(188, 181, 181); 
+}
+
+.info1 {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 80px;
+    color: #ec9123;
+}
+
+
+.list-info {
+    padding: 0;
+    width: 300px;
+    flex-direction: column;
+    list-style: square;
+}
+
+
+.logo-info {
+    font-size: 30px;
+    display: flex;
+}
+
+.logo {
+    padding-right: 15px;
+}
+
+.underline {
+    color: rgb(188, 181, 181); 
+}
+
+.location {
+    text-decoration: none;
+    color: rgb(188, 181, 181);
+}
+
+.notre_equipe {
+    display: flex;
+    margin: 0 0 100 400;
+}
+
+.rectangle {
+    height: 250px;
+    width: 200px;
+    background-color: #0d0b26;
+    margin: 0 15 0 0;
+}
+.centre{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+.petit{
+    margin: 15;
+}
+.grand{
+    margin: 15 0 0 0;
+}
