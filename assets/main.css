@@ -256,3 +256,158 @@ p {
     background-size: cover;
     /* height: 50px; */
 }
+
+.scores {
+    background-color: #100e2e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.scores .Power {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.scores .Tête-du-Tableau {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.scores .Tableau {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.scores #Pseudo-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Level-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Score-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Date-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Hour-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores .Les-cases-Pseudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Level {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Score {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Date {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Hour {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores #Pseudo-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Score-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Date-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Hour-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores .Les-cases {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scores #Level-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
