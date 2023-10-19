@@ -14,11 +14,6 @@
     margin: 0;
 }
 
-p {
-    color: white;
-    font-size: small;
-}
-
 .index h2 {
     font-size: 85;
     color: white;
@@ -170,16 +165,6 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.register .title {
-    display: flex;
-    justify-content: center;
-    color: white;
-    padding: 120px;
-    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
-    background-size: cover;
-    /* height: 50px; */
-}
-
 .register .cases {
     display: flex;
     justify-content: center;
@@ -218,3 +203,56 @@ p {
     color: #888486;
 }
 
+
+.login {
+    background-color: #100e2e;
+    font-family: system-ui;
+}
+
+.login .id-connexion {
+    display: flex;
+    margin: 5px auto;
+    width: 500px;
+    height: 40px;
+    color: #888486;
+    background-color: #373654;
+    border-radius: 2px;
+    border: 0;
+    padding-left: 20px;
+}
+
+.login .Space {
+    display: flex;
+    flex-direction: column;
+    margin: 68px 0px;
+}
+
+.login input::placeholder {
+    color: #888486;
+}
+
+.login .bouton {
+    margin: 15px 31.555%;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    background-color: #ec9123;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+    justify-content: center;
+}
+
+p {
+    color: white;
+    font-size: small;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 120px;
+    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
+    background-size: cover;
+    /* height: 50px; */
+}
