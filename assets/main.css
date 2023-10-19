@@ -243,20 +243,6 @@
     justify-content: center;
 }
 
-p {
-    color: white;
-    font-size: small;
-}
-.title {
-    display: flex;
-    justify-content: center;
-    color: white;
-    padding: 120px;
-    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
-    background-size: cover;
-    /* height: 50px; */
-}
-
 .scores {
     background-color: #100e2e;
     font-family: Arial, Helvetica, sans-serif;
@@ -410,4 +396,37 @@ p {
     border: 3px solid #ec9123;
     width: 100px;
     text-align: center;
+}
+
+.jeu {
+    background-color: #100e2e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.jeu .carte {
+    border-radius: 5%;
+    height: 100px;
+    width: 100px;
+    margin: 0 35px 0 0;
+}
+.jeu .tableau{
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 0 0;
+}
+
+p {
+    color: white;
+    font-size: small;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 120px;
+    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
+    background-size: cover;
+    /* height: 50px; */
+}
+.hidden {
+    display: none;
 }
