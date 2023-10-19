@@ -536,3 +536,89 @@ body{
     font-weight: 400;
     margin: 20px;
 }
+
+
+
+.account body {
+    background-color: #100e2e;
+}
+
+.account .motdepass {
+    display: flex;
+    justify-content: left;
+    color: white;
+}
+
+.account .adressmail {
+    display: flex;
+    justify-content: right;
+    color: white;
+}
+
+.account .aligner {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+
+.account .droite {
+    display: flex;
+    justify-content: s;
+}
+
+.account .position {
+    margin: 0 0 0 35%;
+}
+
+.account .position2 {
+    margin: 0 0 0 15%;
+}
+
+.account .espace {
+    margin-bottom: 10px;
+}
+
+.account .box {
+    padding: 15px 1px 15px 10px;
+    background-color: #373654;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+    width: 19vw;
+}
+
+.account .btn {
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    padding: 8px;
+}
+
+.account .image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 5% 0 0 0;
+}
+
+.account .position4 {
+    margin: 0 0 0 47%;
+}
+
+.account .bouton {
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    padding: 8px;
+}
+
+.account .text {
+    margin: 0.85vw;
+}
+.position3{
+    display: flex;
+}

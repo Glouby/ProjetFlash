@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon espace</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/header.css">
+    <link rel="stylesheet" href="assets/footer.css">
 </head>
 
 <body class="account">
@@ -25,12 +27,12 @@
             </nav>
         </div>
     </header>
-    <div>
-        <h1 class="title">Mon espace</h1>
+    <div class="title">
+        <h1>MON ESPACE</h1>
     </div>
 
     <div class="position4">
-        <img class="image" src="TlJ4aGc1YmJ3V2JXNitYNUswYk9QVTE5T1RPUHI4US9jTy9WejgxRXhrL2d3Q2lYMHc1VUd4Q0JlMkE1ZUhpQzYyT2Zoc2Vpc3Mrd1BuNDF1YnpzYys5QjM5NXNFNjdxNDVhTHlOc1lUa0k9.jpeg">
+        <img class="image" src="image/profil.jpeg">
         <div class="text">
             <p>Mahtis braux</p>
         </div>
@@ -38,35 +40,16 @@
 
     </div>
 
+    <div class="aligner">
+        <div class="motdepass">
+            <h2>Changement de mot de passe</h2>
+        </div>
+        <div class="adressmail">
+            <h2>Changement email</h2>
+        </div>
+    </div>
+
     <div class="position3">
-        <div class="aligner">
-            <div class="motdepass">
-                <h2>Changement de mot de passe</h2>
-            </div>
-            <div class="adressmail">
-                <h2>Changement email</h2>
-            </div>
-        </div>
-        <div class="position">
-            <form  method="post">
-                <div class="espace">
-                    <label for="pseudo"></label>
-                    <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
-                </div>
-                <div class="espace">
-                    <label for="password"></label>
-                    <input class="box" type="password" name="password" id="password" placeholder="Nouveau Mot de passe">
-                </div>
-                <div class="espace">
-                    <label for="password"></label>
-                    <input class="box" type="password" name="password" id="password"
-                        placeholder="Confimer le nouveau mot de passe">
-                    <div>
-                        <input class="btn" type="submit" value="Inscription">
-                    </div>
-                </div>
-            </form>
-        </div>
         <div class="position2">
             <form action="" method="post">
 
@@ -88,19 +71,39 @@
                 </div>
             </form>
         </div>
+        <div class="position">
+            <form  method="post">
+                <div class="espace">
+                    <label for="pseudo"></label>
+                    <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
+                </div>
+                <div class="espace">
+                    <label for="password"></label>
+                    <input class="box" type="password" name="password" id="password" placeholder="Nouveau Mot de passe">
+                </div>
+                <div class="espace">
+                    <label for="password"></label>
+                    <input class="box" type="password" name="password" id="password"
+                        placeholder="Confimer le nouveau mot de passe">
+                    <div>
+                        <input class="btn" type="submit" value="Inscription">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
         <div class="info1">
             <div>
                 <div>
-                    <h2 class="title-info">Information</h2>
+                    <div class="title-info">Information</div>
 
                         <p class="info">Pour toute information</p>
-                        <p class="info"><span>Tél :</span> 06 05 04 03 02</p>
-                        <p class="info"><span>Email :</span> support@powerofmemory.com</p>
-                        <p class="location"><span>Location :</span> Paris</p>
+                        <p class="info"><span class="orange">Tél :</span> 06 05 04 03 02</p>
+                        <p class="info"><span class="orange">Email :</span> support@powerofmemory.com</p>
+                        <p class="location"><span class="orange">Location :</span> Paris</p>
                 </div>
-        
+
                         <div class="logo-info">
                         <div class="logo"><i class="fa-brands fa-square-facebook" style="color: #ec9123;"></i></div>
                         <div class="logo"><i class="fa-brands fa-square-twitter" style="color: #ec9123;"></i></div>
@@ -110,11 +113,11 @@
                         <script src="https://kit.fontawesome.com/f09ae54942.js" crossorigin="anonymous"></script>
             </div>
         </div>
-    
-    
+
+
         <div class="info2">
             <div>
-                <h2 class="title-info">Power Of Memory</h2>
+                <div class="title-info">Power Of Memory</div>
 
                 <ul class="list-info">
                     <li><a class="underline" href="">Jouer !</a></li>
