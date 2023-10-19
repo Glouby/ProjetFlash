@@ -2,9 +2,7 @@
     background-image: url("../image/memory_hero.jpeg");
     background-size: 1450px 850px;
     background-repeat: no-repeat;
-    background-color: #100e2e;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .index h1 {
@@ -158,13 +156,6 @@
     margin: 15 0 0 0;
 }
 
-
-
-.register {
-    background-color: #100e2e;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .register .cases {
     display: flex;
     justify-content: center;
@@ -205,7 +196,6 @@
 
 
 .login {
-    background-color: #100e2e;
     font-family: system-ui;
 }
 
@@ -241,11 +231,6 @@
     border-radius: 5px;
     border: 0;
     justify-content: center;
-}
-
-.scores {
-    background-color: #100e2e;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .scores .Power {
@@ -398,10 +383,6 @@
     text-align: center;
 }
 
-.jeu {
-    background-color: #100e2e;
-    font-family: Arial, Helvetica, sans-serif;
-}
 .jeu .carte {
     border-radius: 5%;
     height: 100px;
@@ -429,4 +410,129 @@ p {
 }
 .hidden {
     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: #100e2e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact .cases2 {
+    padding-top: 40px;
+    display: flex;
+    justify-content: left;
+    padding-left: 65px;
+    padding-bottom: 20px;
+}
+
+.contact form div {
+    padding-bottom: 10px;
+}
+
+.contact .ligne1 {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.contact .boxs {
+    background-color: #373654;
+    color: #888486;
+    border-radius: 2px;
+    border: 0;
+    padding: 15px;
+    padding-right: 130px;
+    margin-top: 4px;
+}
+
+.contact .btn {
+    background-color: #ec9123;
+    color: white;
+    border-radius: 2px;
+    border: 0;
+    padding: 15px 25px;
+}
+
+.contact .infoC {
+    margin-top: 100px;
+    color: white;
+}
+
+.contact .numero {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .m {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .sup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .Paris {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .ville {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .ligne2 {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.contact .item {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    margin: 10px;
+}
+
+.contact .fa-solid, .fa {
+    font-weight: 900;
+    margin: 20px;
+}
+
+.contact .fa-regular, .far {
+    font-weight: 400;
+    margin: 20px;
 }
