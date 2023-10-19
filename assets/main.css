@@ -1,0 +1,624 @@
+.index {
+    background-image: url("../image/memory_hero.jpeg");
+    background-size: 1450px 850px;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+
+.index h1 {
+    color: white;
+    font-size: small;
+    padding: 20 0 0 0;
+    margin: 0;
+}
+
+.index h2 {
+    font-size: 85;
+    color: white;
+    text-align: center;
+    padding: 200 0 0 0;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.index .play-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.index .play-button {
+    width: 120px;
+    height: 40px;
+    background-color: #ec9123;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 14;
+}
+
+.index .image {
+    display: flex;
+}
+
+.index .bloc {
+    display: flex;
+    width: 50%;
+    color: white;
+    margin: 0 100 100 0;
+    align-items: baseline;
+    font-size: small;
+}
+
+.index .texte_bloc {
+    display: flex;
+    margin: 0 170;
+}
+
+.index .nb {
+    font-size: 30;
+    color: #3724a0;
+    font-weight: 600;
+    margin: 0 10 0 0;
+}
+
+.index .gras {
+    font-weight: 600;
+    font-size: medium;
+}
+
+.index .community {
+    display: flex;
+}
+
+.index .ligne_1 {
+    display: flex;
+}
+
+.index .ligne_2 {
+    display: flex;
+}
+
+.index .part_2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.index .case_1 {
+    height: 120px;
+    width: 200px;
+    background-color: #3724a0;
+    text-align: center;
+    margin: 0 10 20;
+}
+
+.index .case_2 {
+    height: 120px;
+    width: 200px;
+    background-color: #18a15f;
+    text-align: center;
+    margin: 0 10 20;
+}
+
+.index .case_3 {
+    height: 120px;
+    width: 200px;
+    background-color: #b91ca8;
+    text-align: center;
+    margin: 0 10 20;
+}
+
+.index .case_4 {
+    height: 120px;
+    width: 200px;
+    background-color: #ec9123;
+    text-align: center;
+    margin: 0 10 20;
+}
+
+.index .img {
+    height: 300;
+    width: 500;
+    padding: 0 20 0 200;
+}
+
+.index .gros_nb {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.index .notre_equipe {
+    display: flex;
+    margin: 0 0 100 400;
+}
+
+.index .rectangle {
+    height: 250px;
+    width: 200px;
+    background-color: #0d0b26;
+    margin: 0 15 0 0;
+}
+
+.index .centre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.index .petit {
+    margin: 15;
+}
+
+.index .grand {
+    margin: 15 0 0 0;
+}
+
+.register .cases {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; 
+}
+
+.register form div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.register .box {
+    padding: 15px ;
+    padding-right: 200px;
+    border: 0;
+    border-radius: 2px;
+    background-color: #373654;
+}
+
+.register .bouton {
+    /* padding-left: 2px; */
+    background-color: #ec9123;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    width: 115px;
+    height: 45px;
+}
+
+.register input {
+    width: 20vw;
+}
+
+.register ::placeholder {
+    color: #888486;
+}
+
+
+.login {
+    font-family: system-ui;
+}
+
+.login .id-connexion {
+    display: flex;
+    margin: 5px auto;
+    width: 500px;
+    height: 40px;
+    color: #888486;
+    background-color: #373654;
+    border-radius: 2px;
+    border: 0;
+    padding-left: 20px;
+}
+
+.login .Space {
+    display: flex;
+    flex-direction: column;
+    margin: 68px 0px;
+}
+
+.login input::placeholder {
+    color: #888486;
+}
+
+.login .bouton {
+    margin: 15px 31.555%;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    background-color: #ec9123;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 0;
+    justify-content: center;
+}
+
+.scores .Power {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.scores .Tête-du-Tableau {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.scores .Tableau {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.scores #Pseudo-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Level-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Score-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Date-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Hour-in-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores .Les-cases-Pseudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Level {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Score {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Date {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores .Les-cases-Hour {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores #Pseudo-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Score-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Date-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores #Hour-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.scores .Les-cases {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scores #Level-case {
+    color: white;
+    background-color: #1d1936;
+    padding: 25px;
+    margin-top: 0;
+    border: 3px solid #ec9123;
+    width: 100px;
+    text-align: center;
+}
+
+.jeu .carte {
+    border-radius: 5%;
+    height: 100px;
+    width: 100px;
+    margin: 0 35px 0 0;
+}
+.jeu .tableau{
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 0 0;
+}
+
+p {
+    color: white;
+    font-size: small;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 120px;
+    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
+    background-size: cover;
+    /* height: 50px; */
+}
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: #100e2e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact .cases2 {
+    padding-top: 40px;
+    display: flex;
+    justify-content: left;
+    padding-left: 65px;
+    padding-bottom: 20px;
+}
+
+.contact form div {
+    padding-bottom: 10px;
+}
+
+.contact .ligne1 {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.contact .boxs {
+    background-color: #373654;
+    color: #888486;
+    border-radius: 2px;
+    border: 0;
+    padding: 15px;
+    padding-right: 130px;
+    margin-top: 4px;
+}
+
+.contact .btn {
+    background-color: #ec9123;
+    color: white;
+    border-radius: 2px;
+    border: 0;
+    padding: 15px 25px;
+}
+
+.contact .infoC {
+    margin-top: 100px;
+    color: white;
+}
+
+.contact .numero {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .m {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .sup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .Paris {
+    background-color: #1d1936;
+    border: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 30px 125px;
+}
+
+.contact .ville {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .ligne2 {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.contact .item {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    margin: 10px;
+}
+
+.contact .fa-solid, .fa {
+    font-weight: 900;
+    margin: 20px;
+}
+
+.contact .fa-regular, .far {
+    font-weight: 400;
+    margin: 20px;
+}
+
+
+
+.account body {
+    background-color: #100e2e;
+}
+
+.account .motdepass {
+    display: flex;
+    justify-content: left;
+    color: white;
+}
+
+.account .adressmail {
+    display: flex;
+    justify-content: right;
+    color: white;
+}
+
+.account .aligner {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+
+.account .droite {
+    display: flex;
+    justify-content: s;
+}
+
+.account .position {
+    margin: 0 0 0 35%;
+}
+
+.account .position2 {
+    margin: 0 0 0 15%;
+}
+
+.account .espace {
+    margin-bottom: 10px;
+}
+
+.account .box {
+    padding: 15px 1px 15px 10px;
+    background-color: #373654;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+    width: 19vw;
+}
+
+.account .btn {
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    padding: 8px;
+}
+
+.account .image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 5% 0 0 0;
+}
+
+.account .position4 {
+    margin: 0 0 0 47%;
+}
+
+.account .bouton {
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 1px;
+    border: 0;
+    padding: 8px;
+}
+
+.account .text {
+    margin: 0.85vw;
+}
+.position3{
+    display: flex;
+}
