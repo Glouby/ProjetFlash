@@ -840,3 +840,83 @@ body{
     margin: 1.2vw;
     color: white;
 }
+
+
+
+.boutique form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.boutique .Boutique{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1.5vw;
+}
+
+.boutique .Description{
+    display: flex;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+}
+
+.boutique .Article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #373654;
+    border: 0.5vw solid orange;
+    border-radius: 30px;
+}
+
+.boutique .Piece-Dollar{
+    border-radius: 50%;
+    width: 1.736vw;
+    height: 1.736vw;
+}
+
+.boutique .Piece {
+    display: flex;
+    color: white;
+    margin: 2vw 20vw;
+    align-items: center;
+    font-size: 1.01vw;
+}
+
+.boutique .Image-Boutique{
+    border: 2.083vw;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 29.5px;
+}
+
+.boutique .lettre{
+    display: flex;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+    padding: 0 10vw ;
+}
+
+.boutique .nb {
+    display: flex;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+}
+
+.boutique .Prix{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boutique section{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2vw;
+}
