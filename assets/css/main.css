@@ -8,7 +8,7 @@
 .index h1 {
     color: white;
     font-size: 0.903vw;
-    padding: 1.389vw 0 0 0;
+    padding: 1.389vw 0 0 0; 
     margin: 0;
 }
 .index .le_nb{
@@ -209,9 +209,7 @@
 }
 
 
-.login {
-    font-family: system-ui;
-}
+
 
 .login .id-connexion {
     display: flex;
@@ -437,16 +435,9 @@ p {
 
 
 
-
-
-
-
-
-
-
 body{
     background-color: #100e2e;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'AR One Sans', sans-serif;
 }
 
 .contact .cases2 {
@@ -477,16 +468,6 @@ body{
     margin-top: 0.278vw;
     font-size: 0.92vw;
 }
-
-.contact .btn {
-    margin-top: 0.694vw;
-    background-color: orange;
-    color: white;
-    border-radius: 0.069vw;
-    border: 0;
-    padding: 0.8vw;
-    font-size: 0.93vw;
-  }
 
 .contact .infoC {
     margin-top: 6.944vw;
@@ -615,14 +596,6 @@ body{
     font-size: 0.93vw;
 }
 
-.account .btn {
-    margin-top: 0.694vw;
-    background-color: orange;
-    color: white;
-    border-radius: 0.069vw;
-    border: 0;
-    padding: 0.556vw;
-}
 
 .account .image {
     height: 6.944vw;
