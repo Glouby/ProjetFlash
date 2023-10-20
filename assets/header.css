@@ -9,9 +9,9 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 0.694vw;
     margin: 0;
-    padding: 0 100px 20px;
+    padding: 0 6.944vw 1.389vw;
 }
 .menu-links {
     display: flex;
@@ -27,13 +27,13 @@ ul {
 }
 a {
     color: white;
-    margin: 0 25px;
+    margin: 0 1.736vw;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 0.833vw;
     text-align: center;
 }
 li {
-    padding: 25px 0 0 0;
+    padding: 1.736vw 0 0 0;
 }
 li:hover {
     transition-duration: 0.5s;
@@ -44,8 +44,8 @@ li:hover a {
 }
 .tete {
     color: white;
-    font-size: small;
-    padding: 20px 0 0 0;
+    font-size: 0.903vw;
+    padding: 1.389vw 0 0 0;
     margin: 0;
     font-weight: 600;
 }
