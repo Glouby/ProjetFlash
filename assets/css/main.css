@@ -469,6 +469,16 @@ body{
     font-size: 0.92vw;
 }
 
+.contact .btn {
+    margin-top: 0.694vw;
+    background-color: orange;
+    color: white;
+    border-radius: 0.069vw;
+    border: 0;
+    padding: 0.8vw;
+    font-size: 0.93vw;
+  }
+
 .contact .infoC {
     margin-top: 6.944vw;
     color: white;
@@ -596,6 +606,14 @@ body{
     font-size: 0.93vw;
 }
 
+.account .btn {
+    margin-top: 0.694vw;
+    background-color: orange;
+    color: white;
+    border-radius: 0.069vw;
+    border: 0;
+    padding: 0.556vw;
+}
 
 .account .image {
     height: 6.944vw;
