@@ -1,5 +1,5 @@
 .index {
-    background-image: url("../image/memory_hero.jpeg");
+    background-image: url("../assets/image/memory_hero.jpeg");
     background-size: 100vw 59.028vw;
     background-repeat: no-repeat;
     justify-content: center;
@@ -10,6 +10,14 @@
     font-size: 0.903vw;
     padding: 1.389vw 0 0 0;
     margin: 0;
+}
+.index .le_nb{
+    margin-top: 2.4vw;
+}
+
+.index .le_p{
+    margin: 1.5vw;
+    font-size: 1.3vw;
 }
 
 .index .logo-equipe{
@@ -31,8 +39,8 @@
 }
 
 .index .play-button {
-    width: 8.333vw;
-    height: 2.778vw;
+    width: 9.333vw;
+    height: 3vw;
     background-color: #ec9123;
     color: white;
     text-align: center;
@@ -40,7 +48,8 @@
     font-weight: 600;
     line-height: 2.778vw;
     font-size: 0.972vw;
-}
+    border-radius: 2%;
+  }
 
 .index .image {
     display: flex;
@@ -50,7 +59,7 @@
     display: flex;
     width: 50%;
     color: white;
-    margin: 0 6.944vw 6.944vw 0;
+    margin: 0 1.944vw 6.944vw 0;
     align-items: baseline;
     font-size: 0.903vw;
 }
@@ -417,7 +426,7 @@ p {
     justify-content: center;
     color: white;
     padding: 8.333vw;
-    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
+    background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816289597403146/Brain-Header-1170x300.jpg?ex=6540f362&is=652e7e62&hm=0df0b84a8b23ed54ed49db34300d984b7e3dcdfcf40abb3a3d9072d8ffcf83c8&");
     background-size: cover;
     font-size: 2.222vw;
 }
@@ -643,36 +652,40 @@ body{
     display: flex;
 }
 
+.jeu img {
+    border-radius: 50%;
+    height: 1.736vw;
+    width: 1.736vw;
+}
 
 .chat {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0 0 0 78.7vw;
-  width: 21vw;
-
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 15.372vw;
+    margin: 0;
 }
 
-.chat-header {
-    background-color: #373654;
-    color: white;
-    padding: 1vw;
-    margin: 0 0 0 78.7vw;
-    width: 19.6vw;
+.chat .chat-box {
+    width: 20.833vw;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0.347vw;
 }
 
-.chat-header {
+.chat .chat-header {
     background-color: #373654;
     color: white;
     padding: 0.694vw;
+    font-size: 1.12vw;
 }
 
 .chat .chat-messages {
     max-height: 13.889vw;
-    padding: 0.694vw 0 10.764vw 0.694vw;
-    margin: 0 0.5vw 0 0;
+    overflow-y: auto;
+    padding: 0.694vw 0 0.764vw 0.694vw;
+    border-radius: 0.347vw;
 }
 
 .chat .message {
@@ -685,39 +698,65 @@ body{
     font-weight: bold;
     font-size: 0.417vw;
     color: rgb(151, 149, 149);
-    margin-left: 32vh;
-    margin-top: 0.5vh;
+    margin-left: 15.399vw;
+}
+
+.chat .Hour-moi2 {
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgb(151, 149, 149);
+    margin-right: 0.9vw;
+    margin-bottom: 0.271vw;
 }
 
 .chat .Hour-User {
     font-weight: bold;
     font-size: 0.417vw;
     color: rgb(151, 149, 149);
-    margin-left: 4.5vh;
-    margin-top: 0.5vh;
+    margin-left: 2.446vw;
+    margin-top: 0.271vw;
 }
 
 .chat .Moi {
     font-weight: bold;
     font-size: 0.417vw;
     color: rgb(151, 149, 149);
-    margin-left: 32vh;
-    margin-bottom: 0.5vh;
+    margin-left: 15.399vw;
+    margin-bottom: 0.271vw;
 }
+
+.chat .Moi2{
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgb(151, 149, 149);
+    margin-left: 15.399vw;
+    margin-bottom: 0.271vw;
+}
+
+
 
 .chat .user {
     font-weight: bold;
     font-size: 0.417vw;
     color: rgba(151, 149, 149);
-    margin-left: 4vh;
-    margin-bottom: 0.5vh;
+    margin-left: 2.174vw;
+    margin-bottom: 0.271vw;
 }
 
 .chat .Mes-messages {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 13vh;
+    margin-left: 7.068vw;
+}
+
+.chat .Mes-messages2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 14.4vw;
 }
 
 .chat .mot {
@@ -728,7 +767,19 @@ body{
     border-radius: 0.347vw;
     background-color: #373654;
     align-items: center;
-    margin-left: 17vh;
+    margin-left: 6.7vw;
+    padding: 0.486vw 0.833vw;
+}
+
+.chat .mot2 {
+    display: flex;
+    font-size: 0.4vw;
+    color: white;
+    border: 0 #ccc solid;
+    border-radius: 0.347vw;
+    background-color: #373654;
+    align-items: center;
+    margin-left: 5.7vw;
     padding: 0.486vw 0.833vw;
 }
 
@@ -749,14 +800,13 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 13vh;
+    margin-left: 7.068vw;
 }
 
 .chat .chat-input {
     display: flex;
-    padding: 13.194vw 0 0.694vw 0;
-}
-
+    padding: 3.194vw 0 0.694vw 0;
+  }
 .chat #message-input {
     flex: 1;
     padding: 0.347vw;
@@ -775,14 +825,27 @@ body{
     border: none;
     border-radius: 0.208vw;
     padding: 0.347vw 0.694vw;
-    margin-left: 0.7vw;
-    margin-right: 1vw;
+    margin-left: 0.347vw;
     cursor: pointer;
     font-size: 0.694vw;
 }
 
-.jeu img {
+.chat img {
     border-radius: 50%;
     height: 1.736vw;
     width: 1.736vw;
+}
+
+.jeu .timer{
+    height: 4vw;
+    width: 10vw;
+    margin-left: 15%;
+    margin-top: 5vw;
+    border: 0.1vw solid orange;
+}
+.jeu .timer-texte{
+    font-size: 1.2vw;
+    text-align: center;
+    margin: 1.2vw;
+    color: white;
 }

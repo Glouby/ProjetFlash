@@ -31,6 +31,7 @@ footer {
     width: 20.833vw;
     flex-direction: column;
     list-style: square;
+    font-size: 1.2vw;
 }
 
 .logo-info {
