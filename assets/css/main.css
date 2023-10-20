@@ -572,14 +572,14 @@ body{
     display: flex;
     justify-content: right;
     color: white;
-    font-size: 2.2vw;
+    font-size: 1.2vw;
   }
 
 .account .adressmail {
     display: flex;
     justify-content: right;
     color: white;
-    font-size: 2.2vw;
+    font-size: 1.2vw;
 }
 
 .account .aligner {
