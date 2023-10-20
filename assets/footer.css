@@ -1,5 +1,5 @@
 footer {
-    margin-top: 100px;
+    margin-top: 6.944vw;
     background-color: #0d0b26;
     width: 100vw;
     height: 43vh;
@@ -15,31 +15,31 @@ footer {
 
 .title-info {
     color: white;
-    font-size: 15px;
+    font-size: 1.042vw;
     font-weight: 600;
 }
 
 .info1 {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 80px;
+    padding-top: 5.556vw;
     color: #ec9123;
 }
 
 .list-info {
     padding: 0;
-    width: 300px;
+    width: 20.833vw;
     flex-direction: column;
     list-style: square;
 }
 
 .logo-info {
-    font-size: 30px;
+    font-size: 2.083vw;
     display: flex;
 }
 
 .logo {
-    padding-right: 15px;
+    padding-right: 1.042vw;
 }
 
 .underline {

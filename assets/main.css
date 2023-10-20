@@ -1,25 +1,28 @@
 .index {
     background-image: url("../image/memory_hero.jpeg");
-    background-size: 1450px 850px;
+    background-size: 100vw 59.028vw;
     background-repeat: no-repeat;
     justify-content: center;
 }
 
 .index h1 {
     color: white;
-    font-size: small;
-    padding: 20 0 0 0;
+    font-size: 0.903vw;
+    padding: 1.389vw 0 0 0;
     margin: 0;
 }
 
+.index .logo-equipe{
+    font-size: 2vw;
+}
 .index h2 {
-    font-size: 85;
+    font-size: 5.903vw;
     color: white;
     text-align: center;
-    padding: 200 0 0 0;
-    margin: 0 auto;
+    padding: 13.889vw 0 0 0;
+    margin: 0 25vw;
     width: 50%;
-}
+  }
 
 .index .play-button-container {
     display: flex;
@@ -28,15 +31,15 @@
 }
 
 .index .play-button {
-    width: 120px;
-    height: 40px;
+    width: 8.333vw;
+    height: 2.778vw;
     background-color: #ec9123;
     color: white;
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    line-height: 40px;
-    font-size: 14;
+    font-weight: 600;
+    line-height: 2.778vw;
+    font-size: 0.972vw;
 }
 
 .index .image {
@@ -47,26 +50,26 @@
     display: flex;
     width: 50%;
     color: white;
-    margin: 0 100 100 0;
+    margin: 0 6.944vw 6.944vw 0;
     align-items: baseline;
-    font-size: small;
+    font-size: 0.903vw;
 }
 
 .index .texte_bloc {
     display: flex;
-    margin: 0 170;
+    margin: 0 11.806vw;
 }
 
 .index .nb {
-    font-size: 30;
+    font-size: 2.083vw;
     color: #3724a0;
     font-weight: 600;
-    margin: 0 10 0 0;
+    margin: 0 0.694vw 0 0;
 }
 
 .index .gras {
     font-weight: 600;
-    font-size: medium;
+    font-size: 1vw;
 }
 
 .index .community {
@@ -87,58 +90,58 @@
 }
 
 .index .case_1 {
-    height: 120px;
-    width: 200px;
+    height: 8.333vw;
+    width: 13.889vw;
     background-color: #3724a0;
     text-align: center;
-    margin: 0 10 20;
+    margin: 0 0.694vw 1.389vw;
 }
 
 .index .case_2 {
-    height: 120px;
-    width: 200px;
+    height: 8.333vw;
+    width: 13.889vw;
     background-color: #18a15f;
     text-align: center;
-    margin: 0 10 20;
+    margin: 0 0.694vw 1.389vw;
 }
 
 .index .case_3 {
-    height: 120px;
-    width: 200px;
+    height: 8.333vw;
+    width: 13.889vw;
     background-color: #b91ca8;
     text-align: center;
-    margin: 0 10 20;
+    margin: 0 0.694vw 1.389vw;
 }
 
 .index .case_4 {
-    height: 120px;
-    width: 200px;
+    height: 8.333vw;
+    width: 13.889vw;
     background-color: #ec9123;
     text-align: center;
-    margin: 0 10 20;
+    margin: 0 0.694vw 1.389vw;
 }
 
 .index .img {
-    height: 300;
-    width: 500;
-    padding: 0 20 0 200;
+    height: 20.833vw;
+    width: 34.722vw;
+    padding: 0 1.389vw 0 13.889vw;
 }
 
 .index .gros_nb {
-    font-size: xx-large;
+    font-size: 2.222vw;
     font-weight: 600;
 }
 
 .index .notre_equipe {
     display: flex;
-    margin: 0 0 100 400;
+    margin: 0 0 6.944vw 27.778vw;
 }
 
 .index .rectangle {
-    height: 250px;
-    width: 200px;
+    height: 17.361vw;
+    width: 13.889vw;
     background-color: #0d0b26;
-    margin: 0 15 0 0;
+    margin: 0 1.042vw 0 0;
 }
 
 .index .centre {
@@ -149,41 +152,43 @@
 }
 
 .index .petit {
-    margin: 15;
+    margin: 1.042vw;
 }
 
 .index .grand {
-    margin: 15 0 0 0;
+    margin: 1.042vw 0 0 0;
 }
 
 .register .cases {
     display: flex;
     justify-content: center;
-    margin-top: 100px; 
+    margin-top: 6.944vw; 
 }
 
 .register form div {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 1.389vw;
 }
 
 .register .box {
-    padding: 15px ;
-    padding-right: 200px;
+    padding: 1.042vw;
+    padding-right: 13.889vw;
     border: 0;
-    border-radius: 2px;
+    border-radius: 0.139vw;
     background-color: #373654;
+    font-size: 0.9vw;
 }
 
 .register .bouton {
-    /* padding-left: 2px; */
+    padding-left: 0.139vw;
     background-color: #ec9123;
     color: white;
-    border-radius: 1px;
+    border-radius: 0.069vw;
     border: 0;
-    width: 115px;
-    height: 45px;
+    width: 7.986vw;
+    height: 3.125vw;
+    font-size: 0.92vw;
 }
 
 .register input {
@@ -201,20 +206,21 @@
 
 .login .id-connexion {
     display: flex;
-    margin: 5px auto;
-    width: 500px;
-    height: 40px;
+    margin: 0.347vw auto;
+    width: 34.722vw;
+    height: 2.778vw;
     color: #888486;
     background-color: #373654;
-    border-radius: 2px;
+    border-radius: 0.139vw;
     border: 0;
-    padding-left: 20px;
+    padding-left: 1.389vw;
+    font-size: 0.92vw;
 }
 
 .login .Space {
     display: flex;
     flex-direction: column;
-    margin: 68px 0px;
+    margin: 4.722vw 0vw;
 }
 
 .login input::placeholder {
@@ -222,16 +228,17 @@
 }
 
 .login .bouton {
-    margin: 15px 31.555%;
+    margin: 1.042vw 31.555%;
     display: flex;
-    width: 100px;
-    height: 50px;
+    width: 6.944vw;
+    height: 3.472vw;
     background-color: #ec9123;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 0.347vw;
     border: 0;
     justify-content: center;
-}
+    font-size: 0.9vw;
+  }
 
 .scores .Power {
     display: flex;
@@ -240,13 +247,13 @@
 }
 
 .scores .Tête-du-Tableau {
-    margin-top: 10px;
+    margin-top: 0.694vw;
     display: flex;
     flex-direction: row;
 }
 
 .scores .Tableau {
-    margin-top: 10px;
+    margin-top: 0.694vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -255,50 +262,50 @@
 .scores #Pseudo-in-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
 .scores #Level-in-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
 .scores #Score-in-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
 .scores #Date-in-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
 .scores #Hour-in-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
@@ -310,6 +317,7 @@
 .scores .Les-cases-Level {
     display: flex;
     flex-direction: column;
+    font-size: 1vw;
 }
 
 .scores .Les-cases-Score {
@@ -330,83 +338,88 @@
 .scores #Pseudo-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
+    font-size: 1vw;
 }
 
 .scores #Score-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
+    font-size: 1vw;
 }
 
 .scores #Date-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
+    font-size: 1vw;
 }
 
 .scores #Hour-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
+    font-size: 1vw;
 }
 
 .scores .Les-cases {
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 1vw;
 }
 
 .scores #Level-case {
     color: white;
     background-color: #1d1936;
-    padding: 25px;
+    padding: 1.736vw;
     margin-top: 0;
-    border: 3px solid #ec9123;
-    width: 100px;
+    border: 0.208vw solid #ec9123;
+    width: 6.944vw;
     text-align: center;
 }
 
 .jeu .carte {
     border-radius: 5%;
-    height: 100px;
-    width: 100px;
-    margin: 0 35px 0 0;
+    height: 6.944vw;
+    width: 6.944vw;
+    margin: 0 2.431vw 0 0;
 }
 .jeu .tableau{
     display: flex;
     justify-content: center;
-    margin: 60px 0 0 0;
+    margin: 4.167vw 0 0 0;
 }
 
 p {
     color: white;
-    font-size: small;
+    font-size: 0.903vw;
 }
 .title {
     display: flex;
     justify-content: center;
     color: white;
-    padding: 120px;
+    padding: 8.333vw;
     background-image: url("https://cdn.discordapp.com/attachments/1163484337459707946/1163816778200256642/Capture_decran_2023-10-17_a_14.32.08.png?ex=6540f3d6&is=652e7ed6&hm=51a447268ac7cc4b01e65f8c76a3cc97e006d6bf072ee587f4f2af58955f1a07&");
     background-size: cover;
-    /* height: 50px; */
+    font-size: 2.222vw;
 }
 .hidden {
     display: none;
@@ -428,52 +441,55 @@ body{
 }
 
 .contact .cases2 {
-    padding-top: 40px;
+    padding-top: 2.778vw;
     display: flex;
     justify-content: left;
-    padding-left: 65px;
-    padding-bottom: 20px;
+    padding-left: 4.514vw;
+    padding-bottom: 1.389vw;
 }
 
 .contact form div {
-    padding-bottom: 10px;
+    padding-bottom: 0.694vw;
 }
 
 .contact .ligne1 {
     display: flex;
     justify-content: space-around;
-    margin-right: 15px;
+    margin-right: 1.042vw;
 }
 
 .contact .boxs {
     background-color: #373654;
     color: #888486;
-    border-radius: 2px;
+    border-radius: 0.139vw;
     border: 0;
-    padding: 15px;
-    padding-right: 130px;
-    margin-top: 4px;
+    padding: 1.042vw;
+    padding-right: 9.028vw;
+    margin-top: 0.278vw;
+    font-size: 0.92vw;
 }
 
-.contact .btn {
-    background-color: #ec9123;
+.account .btn {
+    margin-top: 0.694vw;
+    background-color: orange;
     color: white;
-    border-radius: 2px;
+    border-radius: 0.069vw;
     border: 0;
-    padding: 15px 25px;
+    padding: 0.556vw;
+    font-size: 0.93vw;
 }
 
 .contact .infoC {
-    margin-top: 100px;
+    margin-top: 6.944vw;
     color: white;
 }
 
 .contact .numero {
     background-color: #1d1936;
-    border: 10px;
-    width: 100px;
-    height: 150px;
-    padding: 30px 125px;
+    border: 0.694vw;
+    width: 6.944vw;
+    height: 10.417vw;
+    padding: 2.083vw 8.681vw;
 }
 
 .contact .num {
@@ -484,10 +500,10 @@ body{
 
 .contact .m {
     background-color: #1d1936;
-    border: 10px;
-    width: 100px;
-    height: 150px;
-    padding: 30px 125px;
+    border: 0.694vw;
+    width: 6.944vw;
+    height: 10.417vw;
+    padding: 2.083vw 8.681vw;
 }
 
 .contact .sup {
@@ -498,10 +514,10 @@ body{
 
 .contact .Paris {
     background-color: #1d1936;
-    border: 10px;
-    width: 100px;
-    height: 150px;
-    padding: 30px 125px;
+    border: 0.694vw;
+    width: 6.944vw;
+    height: 10.417vw;
+    padding: 2.083vw 8.681vw;
 }
 
 .contact .ville {
@@ -513,28 +529,28 @@ body{
 .contact .ligne2 {
     display: flex;
     justify-content: space-around;
-    margin-right: 15px;
+    margin-right: 1.042vw;
 }
 
 .contact .item {
-    font-size: 20px;
+    font-size: 1.389vw;
     display: flex;
     justify-content: center;
     background-color: orange;
     border-radius: 50%;
-    height: 65px;
-    width: 65px;
-    margin: 10px;
+    height: 4.514vw;
+    width: 4.514vw;
+    margin: 0.694vw;
 }
 
 .contact .fa-solid, .fa {
     font-weight: 900;
-    margin: 20px;
+    margin: 1.389vw;
 }
 
 .contact .fa-regular, .far {
     font-weight: 400;
-    margin: 20px;
+    margin: 1.389vw;
 }
 
 
@@ -545,20 +561,22 @@ body{
 
 .account .motdepass {
     display: flex;
-    justify-content: left;
+    justify-content: right;
     color: white;
-}
+    font-size: 2.2vw;
+  }
 
 .account .adressmail {
     display: flex;
     justify-content: right;
     color: white;
+    font-size: 2.2vw;
 }
 
 .account .aligner {
     display: flex;
     justify-content: space-around;
-    margin-top: 120px;
+    margin-top: 8.333vw;
 }
 
 .account .droite {
@@ -575,30 +593,31 @@ body{
 }
 
 .account .espace {
-    margin-bottom: 10px;
+    margin-bottom: 0.694vw;
 }
 
 .account .box {
-    padding: 15px 1px 15px 10px;
+    padding: 1.042vw 0.069vw 1.042vw 0.694vw;
     background-color: #373654;
-    border-radius: 2px;
+    border-radius: 0.139vw;
     border: 0;
     color: white;
     width: 19vw;
+    font-size: 0.93vw;
 }
 
 .account .btn {
-    margin-top: 10px;
+    margin-top: 0.694vw;
     background-color: orange;
     color: white;
-    border-radius: 1px;
+    border-radius: 0.069vw;
     border: 0;
-    padding: 8px;
+    padding: 0.556vw;
 }
 
 .account .image {
-    height: 100px;
-    width: 100px;
+    height: 6.944vw;
+    width: 6.944vw;
     border-radius: 50%;
     margin: 5% 0 0 0;
 }
@@ -608,12 +627,13 @@ body{
 }
 
 .account .bouton {
-    margin-top: 10px;
+    margin-top: 0.694vw;
     background-color: orange;
     color: white;
-    border-radius: 1px;
+    border-radius: 0.069vw;
     border: 0;
-    padding: 8px;
+    padding: 0.556vw;
+    font-size: 0.93vw;
 }
 
 .account .text {
@@ -621,4 +641,148 @@ body{
 }
 .position3{
     display: flex;
+}
+
+
+.chat {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 0 0 78.7vw;
+  width: 21vw;
+
+}
+
+.chat-header {
+    background-color: #373654;
+    color: white;
+    padding: 1vw;
+    margin: 0 0 0 78.7vw;
+    width: 19.6vw;
+}
+
+.chat-header {
+    background-color: #373654;
+    color: white;
+    padding: 0.694vw;
+}
+
+.chat .chat-messages {
+    max-height: 13.889vw;
+    padding: 0.694vw 0 10.764vw 0.694vw;
+    margin: 0 0.5vw 0 0;
+}
+
+.chat .message {
+    margin: 0.694vw 0;
+    border-radius: 5%;
+    width: 6.944vw;
+}
+
+.chat .Hour-moi {
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgb(151, 149, 149);
+    margin-left: 32vh;
+    margin-top: 0.5vh;
+}
+
+.chat .Hour-User {
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgb(151, 149, 149);
+    margin-left: 4.5vh;
+    margin-top: 0.5vh;
+}
+
+.chat .Moi {
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgb(151, 149, 149);
+    margin-left: 32vh;
+    margin-bottom: 0.5vh;
+}
+
+.chat .user {
+    font-weight: bold;
+    font-size: 0.417vw;
+    color: rgba(151, 149, 149);
+    margin-left: 4vh;
+    margin-bottom: 0.5vh;
+}
+
+.chat .Mes-messages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 13vh;
+}
+
+.chat .mot {
+    display: flex;
+    font-size: 0.694vw;
+    color: white;
+    border: 0 #ccc solid;
+    border-radius: 0.347vw;
+    background-color: #373654;
+    align-items: center;
+    margin-left: 17vh;
+    padding: 0.486vw 0.833vw;
+}
+
+.chat .text {
+    display: flex;
+    font-size: 0.556vw;
+    color: rgb(95, 95, 95);
+    border: 0 #ccc solid;
+    border-radius: 0.347vw;
+    background-color: #e8dfdf;
+    padding: 5%;
+    align-items: center;
+    margin-left: 0.347vw;
+    padding: 0.347vw;
+}
+
+.chat .image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 13vh;
+}
+
+.chat .chat-input {
+    display: flex;
+    padding: 13.194vw 0 0.694vw 0;
+}
+
+.chat #message-input {
+    flex: 1;
+    padding: 0.347vw;
+    border: 0.069vw solid rgba(204, 204, 204);
+    border-radius: 0.208vw;
+}
+
+.chat input::placeholder {
+    font-size: 0.694vw;
+    color: rgb(204, 204, 204, 50);
+}
+
+.chat #send-button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 0.208vw;
+    padding: 0.347vw 0.694vw;
+    margin-left: 0.7vw;
+    margin-right: 1vw;
+    cursor: pointer;
+    font-size: 0.694vw;
+}
+
+.jeu img {
+    border-radius: 50%;
+    height: 1.736vw;
+    width: 1.736vw;
 }
