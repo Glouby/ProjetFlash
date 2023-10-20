@@ -1,5 +1,5 @@
 .index {
-    background-image: url("../assets/image/memory_hero.jpeg");
+    background-image: url("../image/memory_hero.jpeg");
     background-size: 100vw 59.028vw;
     background-repeat: no-repeat;
     justify-content: center;
@@ -478,15 +478,15 @@ body{
     font-size: 0.92vw;
 }
 
-.account .btn {
+.contact .btn {
     margin-top: 0.694vw;
     background-color: orange;
     color: white;
     border-radius: 0.069vw;
     border: 0;
-    padding: 0.556vw;
+    padding: 0.8vw;
     font-size: 0.93vw;
-}
+  }
 
 .contact .infoC {
     margin-top: 6.944vw;
