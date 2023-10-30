@@ -1,6 +1,5 @@
 <?php
 require '../../utils/common.php';
-require SITE_ROOT . 'partials/footer.php';
 ?>
 
 
@@ -73,7 +72,7 @@ require SITE_ROOT . 'partials/footer.php';
             </div>
     </form>
     <?php
-        require 'partials/footer.php';
+        require SITE_ROOT . 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
 </body>

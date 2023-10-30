@@ -1,6 +1,5 @@
 <?php
 require 'utils/common.php';
-require 'partials/footer.php';
 ?>
 
 <!DOCTYPE php>
