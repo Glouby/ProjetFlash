@@ -1,35 +1,17 @@
+<?php
+require 'utils/common.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@600&display=swap');
-    </style>
-</head>
+<?php
+        require 'partials/head.php';
+    ?>
 <body class="boutique">
-    <header>
-        <div class="lien">
-            <div class="tete">The Power Of Memory</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="hoverAcceuil">ACCEUIL</a></li>
-                    <li><a href="memory.html">JEU</a></li>
-                    <li><a href="scores.html">SCORES</a></li>
-                    <li><a href="contact.html">NOUS CONTACTER</a></li>
-                    <li><a href="myAccount.html">MON ESPACE</a></li>
-                    <li><a href="register.html">INSCRIPTION</a></li>
-                    <li><a href="login.html">CONNEXION</a></li>
-                    <li><a href="boutique.html">BOUTIQUE</a></li>
-                </ul>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        require 'partials/header.php';
+        ?>
 
     <!-- le titre + l'image -->
     <div class="title">
@@ -118,45 +100,9 @@
         </div> 
 
     </form>
-    <footer>
-        <div class="info1">
-            <div>
-                <div>
-                    <div class="title-info">Information</div>
-
-                        <p class="info">Pour toute information</p>
-                        <p class="info"><span class="orange">Tél :</span> 06 05 04 03 02</p>
-                        <p class="info"><span class="orange">Email :</span> support@powerofmemory.com</p>
-                        <p class="location"><span class="orange">Location :</span> Paris</p>
-                </div>
-
-                        <div class="logo-info">
-                        <div class="logo"><i class="fa-brands fa-square-facebook" style="color: #ec9123;"></i></div>
-                        <div class="logo"><i class="fa-brands fa-square-twitter" style="color: #ec9123;"></i></div>
-                        <div class="logo"><i class="fa-brands fa-square-google-plus" style="color: #ec9123;"></i></div>
-                        <div class="logo"><i class="fa-brands fa-square-pinterest" style="color: #ec9123;"></i></div>
-                        <div class="logo"><i class="fa-brands fa-square-instagram" style="color: #ec9123;"></i></div>
-                        <script src="https://kit.fontawesome.com/f09ae54942.js" crossorigin="anonymous"></script>
-            </div>
-            <br>
-            <div style="display: flex;">
-                <p style="color: rgb(188, 181, 181);">Copyright ©2022 Tous droits réservés</p>
-            </div>
-        </div>
-
-
-        <div class="info2">
-            <div>
-                <div class="title-info">Power Of Memory</div>
-
-                <ul class="list-info">
-                    <li><a class="underline" href="">Jouer !</a></li>
-                    <li><a class="underline" href="">Les scores</a></li>
-                    <li><a class="underline" href="contact.html">Nous contacter</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <?php
+        require 'partials/footer.php';
+    ?>
     <a href="#" class="le_btn">^</a>
 </body>
 </html>
