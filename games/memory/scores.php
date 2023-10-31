@@ -3,13 +3,6 @@ require '../../utils/common.php';
 require SITE_ROOT . 'utils/database.php';
 ?>
 
-<?php
-$pdo = connectToDbAndGetPdo();
-$pdoStatement = $pdo->prepare('SELECT Score.*, nom_jeu, pseudo FROM Score JOIN Jeu ON Score.id_j = Jeu.id_j JOIN Utilisateur ON Score.id_u = Utilisateur.id_u ORDER BY Score.score ASC');
-$pdoStatement->execute();
-$Scores = $pdoStatement->fetchAll();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <?php
@@ -33,6 +26,14 @@ $Scores = $pdoStatement->fetchAll();
     <?php if (isset($_GET["q"])){
         $bla = $_GET["q"];
     };?>
+
+
+    <?php
+    $pdo = connectToDbAndGetPdo();
+    $pdoStatement = $pdo->prepare('SELECT Score.*, nom_jeu, pseudo FROM Score JOIN Jeu ON Score.id_j = Jeu.id_j JOIN Utilisateur ON Score.id_u = Utilisateur.id_u WHERE pseudo = :pseudo ORDER BY Score.score ASC');
+    $pdoStatement->execute();
+    $Scores = $pdoStatement->fetchAll();
+    ?>
 
 
     <table class="Les-cases" action="Les-cases">
