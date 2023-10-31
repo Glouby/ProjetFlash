@@ -1,6 +1,9 @@
 <?php
 require '../../utils/common.php';
 require SITE_ROOT . 'utils/database.php';
+
+$NamePage = "score";
+
 ?>
 
 
