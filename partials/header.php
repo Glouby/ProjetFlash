@@ -20,8 +20,6 @@
                              endif; ?>
 
 
-
-
                          <?php if($NamePage =="score"):?>
                             <li><a class="orange" href="<?= PROJECT_FOLDER ?>games/memory/scores.php">SCORES</a></li>
                             <?php else:?>
