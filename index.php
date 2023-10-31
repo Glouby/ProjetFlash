@@ -14,7 +14,6 @@ $pdoStatement->execute();
 $bestScore = $pdoStatement->fetch();
 
 $NamePage = 'home';
-
 ?>
 
 <!DOCTYPE php>
