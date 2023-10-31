@@ -9,7 +9,6 @@ $NamePage = "score";
 
 <?php if (!empty($_GET["q"])){
         $bla = $_GET["q"];
-        $pdo = connectToDbAndGetPdo();
         $pdoStatement = $pdo->prepare('SELECT Score.*, nom_jeu, pseudo FROM Score JOIN Jeu ON Score.id_j = Jeu.id_j JOIN Utilisateur ON Score.id_u = Utilisateur.id_u WHERE Utilisateur.pseudo LIKE(:pseudo) ORDER BY nom_jeu,
         (
             CASE niv
@@ -23,7 +22,6 @@ $NamePage = "score";
         ]);
         $Scores = $pdoStatement->fetchAll();
     } else{
-        $pdo = connectToDbAndGetPdo();
     $pdoStatement = $pdo->prepare('SELECT Score.*, nom_jeu, pseudo FROM Score JOIN Jeu ON Score.id_j = Jeu.id_j JOIN Utilisateur ON Score.id_u = Utilisateur.id_u ORDER BY nom_jeu,
     (
         CASE niv
