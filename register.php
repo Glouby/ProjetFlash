@@ -1,5 +1,7 @@
 <?php
 require 'utils/common.php';
+$NamePage = 'registe'
+
 ?>
 
 

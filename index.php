@@ -1,5 +1,6 @@
 <?php
 require 'utils/common.php';
+$NamePage = 'home';
 ?>
 
 <!DOCTYPE php>
