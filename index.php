@@ -1,6 +1,20 @@
 <?php
 require 'utils/common.php';
+require 'utils/database.php';
+$pdoStatement = $pdo->prepare('SELECT COUNT(*) AS userNumber FROM Utilisateur');
+$pdoStatement->execute();
+$utilisateur = $pdoStatement->fetch();
+
+$pdoStatement = $pdo->prepare('SELECT COUNT(*) AS partieJouer FROM Score');
+$pdoStatement->execute();
+$nbPartie = $pdoStatement->fetch();
+
+$pdoStatement = $pdo->prepare('SELECT MIN(score) AS tempsRecord FROM Score');
+$pdoStatement->execute();
+$bestScore = $pdoStatement->fetch();
+
 $NamePage = 'home';
+
 ?>
 
 <!DOCTYPE php>
@@ -12,6 +26,7 @@ $NamePage = 'home';
         <?php
         require 'partials/header.php';
         ?>
+    
         <h2>Bienvenue dans notre studio !</h2>
         <center>
             <p class="le_p">Venez challenger les cerveaux les plus agiles !</p>
@@ -47,18 +62,18 @@ $NamePage = 'home';
             <div class="part_2">
                 <div class="ligne_1">
                     <div class="case_1">
-                        <p class="le_nb"><span class="gros_nb">310</span><br>Parties Jouées</p>
+                        <p class="le_nb"><span class="gros_nb"><?php echo $nbPartie-> partieJouer; ?></span><br>Parties Jouées</p>
                     </div>
                     <div class="case_2">
-                        <p class="le_nb"><span class="gros_nb">1020</span><br>Joueurs Connectés</p>
+                        <p class="le_nb"><span class="gros_nb">X</span><br>Joueurs Connectés</p>
                     </div>
                 </div>
                 <div class="ligne_2">
                     <div class="case_3">
-                        <p class="le_nb"><span class="gros_nb">10 sec</span> <br> Temps Reccord</p>
+                        <p class="le_nb"><span class="gros_nb"><?php echo $bestScore->tempsRecord; ?></span> <br> Temps Record</p>
                     </div>
                     <div class="case_4">
-                        <p class="le_nb"><span class="gros_nb">21 300</span><br>Joueurs Inscrits</p>
+                        <p class="le_nb"><span class="gros_nb"><?php echo $utilisateur->userNumber; ?></span><br>Joueurs Inscrits</p>
                     </div>
                 </div>
             </div>
