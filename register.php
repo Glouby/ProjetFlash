@@ -21,10 +21,10 @@ $NamePage = 'registe'
 
 
     <div class="cases">
-        <form action="email.php" method="post">
+        <form  method="post">
             <div>
                 <label for="mail"></label>
-                <input class="box" type="text" email="email" id="email" placeholder="Email">
+                <input class="box" type="text" name="email" id="email" placeholder="Email">
             </div>
 
             <div>
