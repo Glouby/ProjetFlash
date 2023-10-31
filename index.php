@@ -12,6 +12,9 @@ $nbPartie = $pdoStatement->fetch();
 $pdoStatement = $pdo->prepare('SELECT MIN(score) AS tempsRecord FROM Score');
 $pdoStatement->execute();
 $bestScore = $pdoStatement->fetch();
+
+$NamePage = 'home';
+
 ?>
 
 <!DOCTYPE php>
