@@ -1,5 +1,6 @@
 <?php
 require 'utils/common.php';
+$titre = 'Acceuil'
 ?>
 
 <!DOCTYPE php>

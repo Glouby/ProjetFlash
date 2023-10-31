@@ -1,7 +1,14 @@
 <?php
 require '../../utils/common.php';
+require SITE_ROOT . 'utils/database.php';
 ?>
 
+<?php
+$pdo = connectToDbAndGetPdo();
+$pdoStatement = $pdo->prepare('SELECT Score.*, nom_jeu, pseudo FROM Score JOIN Jeu ON Score.id_j = Jeu.id_j JOIN Utilisateur ON Score.id_u = Utilisateur.id_u ORDER BY Score.score ASC');
+$pdoStatement->execute();
+$Scores = $pdoStatement->fetchAll();
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,59 +25,36 @@ require '../../utils/common.php';
         <h1>SCORES</h1>
     </div>   
 
-    <form class="Les-cases" action="Les-cases">
-
-        <div class="Tête-du-Tableau">
-            <div id="Pseudo-in-case">Pseudo</div>
-            <div id="Level-in-case">Niveau</div>
-            <div id="Score-in-case">Score</div> 
-            <div id="Date-in-case"> Date</div> 
-            <div id="Hour-in-case"> Heure</div>
-        </div>
-
-    </form> 
-
-    <form class="Tableau" action="Tableau">
-
-            <div class="Les-cases-Pseudo">
-                <div id="Pseudo-case"> Jean</div>
-                <div id="Pseudo-case"> Jaque</div>
-                <div id="Pseudo-case"> Jackie</div>
-                <div id="Pseudo-case"> Paule</div>
-                <div id="Pseudo-case"> Jean-Paule</div>
-            </div>
-            <div class="Les-cases-Level">
-                <div id="Level-case"> 1</div>
-                <div id="Level-case"> 2</div>
-                <div id="Level-case"> 3</div>
-                <div id="Level-case"> 4</div>
-                <div id="Level-case"> 5</div>
-            </div>
-
-            <div class="Les-cases-Score" >
-                <div id="Score-case"> 102003</div>
-                <div id="Score-case"> 91939</div>
-                <div id="Score-case"> 13132</div>
-                <div id="Score-case"> 124343</div>
-                <div id="Score-case"> 12312</div>
-            </div>
-
-            <div class="Les-cases-Date">
-                <div id="Date-case"> 06/07/23</div>
-                <div id="Date-case"> 19/04/23</div>
-                <div id="Date-case"> 17/03/23</div>
-                <div id="Date-case"> 23/01/23</div>
-                <div id="Date-case"> 12/12/23</div>
-            </div>
-
-            <div class="Les-cases-Hour">
-                <div id="Hour-case"> 14:33</div>
-                <div id="Hour-case"> 05:45</div>
-                <div id="Hour-case"> 11:55</div>
-                <div id="Hour-case"> 10:40</div>
-                <div id="Hour-case"> 09:43</div>
-            </div>
+    <form method="get"  name="posttkt" style="margin: 2vw 0 1vw 60vw;">
+        <input name="q" type = "search"> 
+        <input type = "submit" value = "Rechercher">
     </form>
+
+    <?php if (isset($_GET["q"])){
+        $bla = $_GET["q"];
+    };?>
+
+
+    <table class="Les-cases" action="Les-cases">
+        
+        <tr>
+            <td id="Pseudo-in-case">Pseudo</td>
+            <td id="Level-in-case">Niveau</td>
+            <td id="Score-in-case">Score</td> 
+            <td id="Date-in-case">Date et Heure</td> 
+            <td id="Hour-in-case">Jeu</td>
+        </tr>
+        <?php foreach($Scores as $score ): ?>
+        <tr>
+            <td id="Pseudo-case"> <?php echo $score -> pseudo ?> </td>
+            <td id="Level-case"> <?php echo $score -> niv ?> </td>
+            <td id="Score-case"> <?php echo $score -> score ?> </td>
+            <td id="Date-case"> <?php echo $score -> date_heure_score ?> </td>
+            <td id="Hour-case"> <?php echo $score -> nom_jeu ?> </td>
+        </tr> 
+        <?php endforeach; ?>
+
+    </table>
     <?php
         require SITE_ROOT . 'partials/footer.php';
     ?>
