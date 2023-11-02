@@ -3,7 +3,7 @@ require 'utils/common.php';
 require 'utils/database.php';
 $NamePage = 'account';
 
-$userId = 1;
+$userId = $incription;
 
 
 if (isset($_FILES['pdp'])) {
