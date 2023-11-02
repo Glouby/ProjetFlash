@@ -7,7 +7,7 @@
              ]);
             $name = $pdoStatement->fetch();
         ?>
-        <p style= "font-size: 2vw; color:#a9a7ce ; padding-left : 40px;"><?php echo $name -> pseudo ?></p>
+        <p style= "font-size: 1vw; color:#a9a7ce ; padding-left : 40px;"><?php echo $name -> pseudo ?></p>
 
             <div class="lien">
                 <div class="tete">The Power Of Memory</div>

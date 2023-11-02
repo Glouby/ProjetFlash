@@ -1,78 +1,33 @@
 <?php
 require 'utils/common.php';
 require 'utils/database.php';
-$NamePage = 'account';
-
-// if(isset($_SESSION['userId'])){
-//     $userId = $_SESSION['userId'];
-// }
+$NamePage = 'account'
+?>
 
 
-// if (isset($_FILES['pdp'])) {
-//     // TODO : controller le type de fichier soumis
-//     // TODO : controller la taille du fichier soumis
-
-//     // stocker le fichier
-//     $folderPath = SITE_ROOT . "userFiles/$userId/";
-// 
-
-// <?php
-//     if (!file_exists($folderPath)) {
-//         mkdir($folderPath, 0777, true);
-//     } else{
-//         $files = scandir($folderPath);
-//         foreach($files as $file){
-//             if($file != '.' && $file != '..'){
-//                 unlink($folderPath.$file);
-//             }
-//         }
-//     }
-
-//     $extension = strtolower(substr(strrchr($_FILES['pdp']['name'], '.'), 1));
-//     $filePath = "$folderPath/profilePicture.$extension";
-//     move_uploaded_file($_FILES['pdp']['tmp_name'], $filePath);
-
-//     $taillemax = 5000000;
-//     $extension = array('jpeg','jpg', 'gif', 'png');
-// }
-// ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 
 <?php
-require 'partials/head.php';
-?>
+        require 'partials/head.php';
+    ?>
 
 <body class="account">
-    <?php
-    require 'partials/header.php';
-    ?>
+<?php
+        require 'partials/header.php';
+        ?>
     <div class="title">
         <h1>MON ESPACE</h1>
     </div>
-    <!--- TODO : Afficher la photo envoyée -->
-
-    <!-- 
-    // $folderPath = SITE_ROOT . "userFiles/$userId/";
-    // $files = scandir($folderPath);
-    // $profilePictureName = $files[2];
-
-    // if ( $_FILES['pdp']['size'] <= $taillemax && file_exists($folderPath.$profilePictureName)) : ?>
-     <img class="image" src="userFiles/ // //$userId ?>  //$profilePictureName ?>">
-     else:
-        <img src="assets/image/profil.jpeg">
-     -->
 
     <div class="position4">
-        <form method="post" enctype="multipart/form-data">
-            <img src="assets/image/profil.jpeg" class="image">
-            <input type="file" name="pdp">
-            <div class="text">
-        
-            </div>
-            <button class="bouton">go</button>
-        </form>
+        <img class="image" src="assets/image/profil.jpeg">
+        <div class="text">
+            <p>Mahtis braux</p>
+        </div>
+
+
     </div>
 
     <div class="aligner">
@@ -86,7 +41,7 @@ require 'partials/head.php';
 
     <div class="position3">
         <div class="position2">
-            <form method="get">
+            <form action="" method="post">
 
                 <div class="espace">
                     <label for="mail"></label>
@@ -107,8 +62,7 @@ require 'partials/head.php';
             </form>
         </div>
         <div class="position">
-          
-            <form  method="get">
+            <form  method="post">
                 <div class="espace">
                     <label for="pseudo"></label>
                     <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
@@ -119,16 +73,17 @@ require 'partials/head.php';
                 </div>
                 <div class="espace">
                     <label for="password"></label>
-                    <input class="box" type="password" name="password" id="password" placeholder="Confimer le nouveau mot de passe">
+                    <input class="box" type="password" name="password" id="password"
+                        placeholder="Confimer le nouveau mot de passe">
                     <div>
-                        <input class="bouton" type="submit" value="Confirmer">
+                        <input class="bouton" type="submit" value="Inscription">
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <?php
-    require 'partials/footer.php';
+        require 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
 
