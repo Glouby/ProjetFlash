@@ -3,60 +3,39 @@ require 'utils/common.php';
 require 'utils/database.php';
 $NamePage = 'account';
 
-$userId = $incription;
+// if(isset($_SESSION['userId'])){
+//     $userId = $_SESSION['userId'];
+// }
 
 
-if (isset($_FILES['pdp'])) {
-    // TODO : controller le type de fichier soumis
-    // TODO : controller la taille du fichier soumis
+// if (isset($_FILES['pdp'])) {
+//     // TODO : controller le type de fichier soumis
+//     // TODO : controller la taille du fichier soumis
 
-    // stocker le fichier
-    $folderPath = SITE_ROOT . "userFiles/$userId/";
-?>
+//     // stocker le fichier
+//     $folderPath = SITE_ROOT . "userFiles/$userId/";
+// 
 
-    if (!file_exists($folderPath)) {
-        mkdir($folderPath, 0777, true);
-    } else{
-        $files = scandir($folderPath);
-        foreach($files as $file){
-            if($file != '.' && $file != '..'){
-                unlink($folderPath.$file);
-            }
-        }
-    }
+// <?php
+//     if (!file_exists($folderPath)) {
+//         mkdir($folderPath, 0777, true);
+//     } else{
+//         $files = scandir($folderPath);
+//         foreach($files as $file){
+//             if($file != '.' && $file != '..'){
+//                 unlink($folderPath.$file);
+//             }
+//         }
+//     }
 
-    $extension = strtolower(substr(strrchr($_FILES['pdp']['name'], '.'), 1));
-    $filePath = "$folderPath/profilePicture.$extension";
-    move_uploaded_file($_FILES['pdp']['tmp_name'], $filePath);
+//     $extension = strtolower(substr(strrchr($_FILES['pdp']['name'], '.'), 1));
+//     $filePath = "$folderPath/profilePicture.$extension";
+//     move_uploaded_file($_FILES['pdp']['tmp_name'], $filePath);
 
-    $taillemax = 5000000;
-    $extension = array('jpeg','jpg', 'gif', 'png');
-    // if ($_FILES['pdp']['size'] <= $taillemax) {        
-    //     $extension = strtolower(substr(strrchr($_FILES['pdp'], '.'),1));
-
-    // }
-    //     if (in_array($extensionupload, $extension)) {
-    //         $chemin = "assets/image/" . $_GET['id'] . "." . $extensionupload;
-    //         $resultat = move_uploaded_file($_FILES['pdp'], $chemin);;
-    //         $id = $_GET['id'];
-    //         if ($resultat) {
-    //             $insertpdp = $db->query("INSERT INTO Utilisateur (pdp) VALUE (:pdp) WHERE id = :id",
-    //                                       array("pdp" =>  $_GET['id'] . "." . $extensionupload,
-    //                                           "id"=>$_GET['id'] ));
-    //             myAccount::redirect("ProjetFlash/myAccount.php?id=" . $_SESSION['id']);
-    //         } else {
-    //             $erreur = "erreur lors de l'importation de votre photo de profil";
-    //         }
-
-    //     } else {
-    //         $erreur = " extension de votre photo de profil invalide";
-    //     }
-
-    // } else {
-    //     $erreur = " Votre photo de profil ne doit pas dépasser 2 mo ";
-    // }
-}
-?>
+//     $taillemax = 5000000;
+//     $extension = array('jpeg','jpg', 'gif', 'png');
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -74,22 +53,23 @@ require 'partials/head.php';
     </div>
     <!--- TODO : Afficher la photo envoyée -->
 
-    <?php
-    $folderPath = SITE_ROOT . "userFiles/$userId/";
-    $files = scandir($folderPath);
-    $profilePictureName = $files[2];
+    <!-- 
+    // $folderPath = SITE_ROOT . "userFiles/$userId/";
+    // $files = scandir($folderPath);
+    // $profilePictureName = $files[2];
 
-    if ( $_FILES['pdp']['size'] <= $taillemax && file_exists($folderPath.$profilePictureName)) : ?>
-        <img class="image" src="userFiles/<?= $userId ?>/<?= $profilePictureName ?>">
-    <?php else: ?>
+    // if ( $_FILES['pdp']['size'] <= $taillemax && file_exists($folderPath.$profilePictureName)) : ?>
+     <img class="image" src="userFiles/ // //$userId ?>  //$profilePictureName ?>">
+     else:
         <img src="assets/image/profil.jpeg">
-    <?php endif; ?>
+     -->
 
     <div class="position4">
         <form method="post" enctype="multipart/form-data">
+            <img src="assets/image/profil.jpeg" class="image">
             <input type="file" name="pdp">
             <div class="text">
-                <?php ?>
+        
             </div>
             <button class="bouton">go</button>
         </form>
