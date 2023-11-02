@@ -1,5 +1,6 @@
 <?php
 require 'utils/common.php';
+require 'utils/database.php';
 $NamePage = 'account'
 ?>
 
@@ -40,7 +41,7 @@ $NamePage = 'account'
 
     <div class="position3">
         <div class="position2">
-            <form action="" method="post">
+            <form method="get">
 
                 <div class="espace">
                     <label for="mail"></label>
@@ -61,7 +62,7 @@ $NamePage = 'account'
             </form>
         </div>
         <div class="position">
-            <form  method="post">
+            <form  method="get">
                 <div class="espace">
                     <label for="pseudo"></label>
                     <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
@@ -75,7 +76,7 @@ $NamePage = 'account'
                     <input class="box" type="password" name="password" id="password"
                         placeholder="Confimer le nouveau mot de passe">
                     <div>
-                        <input class="bouton" type="submit" value="Inscription">
+                        <input class="bouton" type="submit" value="Confirmer">
                     </div>
                 </div>
             </form>

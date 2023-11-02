@@ -12,8 +12,6 @@ if (!empty($_GET["password"])){
     $password = $_GET["password"];
 }else{
     $password = null;
-    
-    
 }
 
 
@@ -25,7 +23,6 @@ $pdoStatement->execute([
 $user = $pdoStatement->fetch();
 
 $_SESSION['userId'] = $user->id_u;
-
 ?>
 
 
