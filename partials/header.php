@@ -27,17 +27,16 @@
                             <?php else:?>
                                 <li><a href="<?= PROJECT_FOLDER ?>games/memory/index.php">JEU</a></li>
                             <?php
-                             endif; ?>
+                            endif; ?>
 
 
-                         <?php if($NamePage =="score"):?>
+                        <?php if($NamePage =="score"):?>
                             <li><a class="orange" href="<?= PROJECT_FOLDER ?>games/memory/scores.php">SCORES</a></li>
                             <?php else:?>
                             <li><a  href="<?= PROJECT_FOLDER ?>games/memory/scores.php">SCORES</a></li>
                         <?php
                         endif; ?>
                         
-                       
                         <?php  if($NamePage=="contact"):?>  
                             <li><a class="orange" href= "<?= PROJECT_FOLDER ?>contact.php">NOUS CONTACTER</a></li>
                             <?php else:?>
