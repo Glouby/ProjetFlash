@@ -1,32 +1,99 @@
 <?php
 require 'utils/common.php';
-$NamePage = 'account'
+require 'utils/database.php';
+$NamePage = 'account';
+
+$userId = 1;
+
+
+if (isset($_FILES['pdp'])) {
+    // TODO : controller le type de fichier soumis
+    // TODO : controller la taille du fichier soumis
+
+    // stocker le fichier
+    $folderPath = SITE_ROOT . "userFiles/$userId/";
+
+    if (!file_exists($folderPath)) {
+        mkdir($folderPath, 0777, true);
+    } else{
+        $files = scandir($folderPath);
+        foreach($files as $file){
+            if($file != '.' && $file != '..'){
+                unlink($folderPath.$file);
+            }
+        }
+    }
+
+    $extension = strtolower(substr(strrchr($_FILES['pdp']['name'], '.'), 1));
+    $filePath = "$folderPath/profilePicture.$extension";
+    move_uploaded_file($_FILES['pdp']['tmp_name'], $filePath);
+
+    // TODO : Afficher la photo envoyée
+
+
+
+    // $taillemax = 5000000;
+    // $extension = array('jpeg','jpg', 'gif', 'png');
+    // if ($_FILES['pdp']['size'] <= $taillemax) {        
+    //     $extensionupload = strtolower(substr(strrchr($_FILES['pdp'], '.'),1));
+    //     if (in_array($extensionupload, $extension)) {
+    //         $chemin = "assets/image/" . $_GET['id'] . "." . $extensionupload;
+    //         $resultat = move_uploaded_file($_FILES['pdp'], $chemin);;
+    //         $id = $_GET['id'];
+    //         if ($resultat) {
+    //             $insertpdp = $db->query("INSERT INTO Utilisateur (pdp) VALUE (:pdp) WHERE id = :id",
+    //                                       array("pdp" =>  $_GET['id'] . "." . $extensionupload,
+    //                                           "id"=>$_GET['id'] ));
+    //             myAccount::redirect("ProjetFlash/myAccount.php?id=" . $_SESSION['id']);
+    //         } else {
+    //             $erreur = "erreur lors de l'importation de votre photo de profil";
+    //         }
+
+    //     } else {
+    //         $erreur = " extension de votre photo de profil invalide";
+    //     }
+
+    // } else {
+    //     $erreur = " Votre photo de profil ne doit pas dépasser 2 mo ";
+    // }
+}
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
 
 <?php
-        require 'partials/head.php';
-    ?>
+require 'partials/head.php';
+?>
 
 <body class="account">
-<?php
-        require 'partials/header.php';
-        ?>
+    <?php
+    require 'partials/header.php';
+    ?>
     <div class="title">
         <h1>MON ESPACE</h1>
     </div>
+    <!--- TODO : Afficher la photo envoyée -->
+
+    <?php
+    $folderPath = SITE_ROOT . "userFiles/$userId/";
+    $files = scandir($folderPath);
+    $profilePictureName = $files[2];
+
+    if (file_exists($folderPath.$profilePictureName)) : ?>
+        <img class="image" src="userFiles/<?= $userId ?>/<?= $profilePictureName ?>">
+    <?php else: ?>
+        <img src="assets/image/profil.jpeg">
+    <?php endif; ?>
 
     <div class="position4">
-        <img class="image" src="assets/image/profil.jpeg">
-        <div class="text">
-            <p>Mahtis braux</p>
-        </div>
-
-
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="pdp">
+            <div class="text">
+                <?php ?>
+            </div>
+            <button class="bouton">go</button>
+        </form>
     </div>
 
     <div class="aligner">
@@ -61,7 +128,7 @@ $NamePage = 'account'
             </form>
         </div>
         <div class="position">
-            <form  method="post">
+            <form method="post">
                 <div class="espace">
                     <label for="pseudo"></label>
                     <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
@@ -72,8 +139,7 @@ $NamePage = 'account'
                 </div>
                 <div class="espace">
                     <label for="password"></label>
-                    <input class="box" type="password" name="password" id="password"
-                        placeholder="Confimer le nouveau mot de passe">
+                    <input class="box" type="password" name="password" id="password" placeholder="Confimer le nouveau mot de passe">
                     <div>
                         <input class="bouton" type="submit" value="Inscription">
                     </div>
@@ -82,7 +148,7 @@ $NamePage = 'account'
         </div>
     </div>
     <?php
-        require 'partials/footer.php';
+    require 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
 
