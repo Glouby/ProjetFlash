@@ -28,14 +28,12 @@ if (isset($_FILES['pdp'])) {
     $filePath = "$folderPath/profilePicture.$extension";
     move_uploaded_file($_FILES['pdp']['tmp_name'], $filePath);
 
-    // TODO : Afficher la photo envoyée
-
-
-
-    // $taillemax = 5000000;
-    // $extension = array('jpeg','jpg', 'gif', 'png');
+    $taillemax = 5000000;
+    $extension = array('jpeg','jpg', 'gif', 'png');
     // if ($_FILES['pdp']['size'] <= $taillemax) {        
-    //     $extensionupload = strtolower(substr(strrchr($_FILES['pdp'], '.'),1));
+    //     $extension = strtolower(substr(strrchr($_FILES['pdp'], '.'),1));
+
+    // }
     //     if (in_array($extensionupload, $extension)) {
     //         $chemin = "assets/image/" . $_GET['id'] . "." . $extensionupload;
     //         $resultat = move_uploaded_file($_FILES['pdp'], $chemin);;
@@ -80,7 +78,7 @@ require 'partials/head.php';
     $files = scandir($folderPath);
     $profilePictureName = $files[2];
 
-    if (file_exists($folderPath.$profilePictureName)) : ?>
+    if ( $_FILES['pdp']['size'] <= $taillemax && file_exists($folderPath.$profilePictureName)) : ?>
         <img class="image" src="userFiles/<?= $userId ?>/<?= $profilePictureName ?>">
     <?php else: ?>
         <img src="assets/image/profil.jpeg">
