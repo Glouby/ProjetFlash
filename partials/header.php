@@ -28,7 +28,7 @@
                         endif; ?>
                         
                        
-                       <?php  if($NamePage=="contact"):?>  
+                        <?php  if($NamePage=="contact"):?>  
                             <li><a class="orange" href= "<?= PROJECT_FOLDER ?>contact.php">NOUS CONTACTER</a></li>
                             <?php else:?>
                         <li><a href= "<?= PROJECT_FOLDER ?>contact.php">NOUS CONTACTER</a></li>   
