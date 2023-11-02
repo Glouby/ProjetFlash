@@ -170,13 +170,12 @@
 
 .register .cases {
     display: flex;
-    justify-content: center;
-    margin-top: 6.944vw; 
+    flex-direction: column;
+    margin-top: 1.389vw;
+    margin-left: 33%;
 }
 
 .register form div {
-    display: flex;
-    flex-direction: column;
     margin-top: 1.389vw;
 }
 
@@ -198,6 +197,7 @@
     width: 7.986vw;
     height: 3.125vw;
     font-size: 0.92vw;
+    
 }
 
 .register input {

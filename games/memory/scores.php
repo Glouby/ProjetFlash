@@ -63,7 +63,7 @@ $NamePage = "score";
         <tr>
             <td id="Pseudo-in-case">Pseudo</td>
             <td id="Level-in-case">Niveau</td>
-            <td id="Score-in-case">Score</td> 
+            <td id="Score-in-case">Score</td>
             <td id="Date-in-case">Date et Heure</td> 
             <td id="Hour-in-case">Jeu</td>
         </tr>

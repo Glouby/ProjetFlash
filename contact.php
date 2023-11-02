@@ -1,5 +1,6 @@
 <?php
 require 'utils/common.php';
+require 'utils/database.php';
 $NamePage = 'contact';
 ?>
 

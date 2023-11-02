@@ -12,6 +12,7 @@ if (isset($_FILES['pdp'])) {
 
     // stocker le fichier
     $folderPath = SITE_ROOT . "userFiles/$userId/";
+?>
 
     if (!file_exists($folderPath)) {
         mkdir($folderPath, 0777, true);
@@ -105,7 +106,7 @@ require 'partials/head.php';
 
     <div class="position3">
         <div class="position2">
-            <form action="" method="post">
+            <form method="get">
 
                 <div class="espace">
                     <label for="mail"></label>
@@ -126,7 +127,8 @@ require 'partials/head.php';
             </form>
         </div>
         <div class="position">
-            <form method="post">
+          
+            <form  method="get">
                 <div class="espace">
                     <label for="pseudo"></label>
                     <input class="box" type="password" name="pseudo" id="pseudo" placeholder="Ancien mot de passe">
@@ -139,7 +141,7 @@ require 'partials/head.php';
                     <label for="password"></label>
                     <input class="box" type="password" name="password" id="password" placeholder="Confimer le nouveau mot de passe">
                     <div>
-                        <input class="bouton" type="submit" value="Inscription">
+                        <input class="bouton" type="submit" value="Confirmer">
                     </div>
                 </div>
             </form>
