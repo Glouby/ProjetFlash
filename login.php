@@ -17,12 +17,13 @@ if (!empty($_GET["password"])){
 
 $pdoStatement = $pdo->prepare("SELECT id_u FROM Utilisateur WHERE mdp = :mdp AND email = :email ");
 $pdoStatement->execute([
-    ':mdp'=> hash('sha256', $password),
+    ':mdp'=> hash('sha256', $password??''),
     ':email'=>$email
 ]);
 $user = $pdoStatement->fetch();
-
-$_SESSION['userId'] = $user->id_u;
+if($user != null){
+    $_SESSION['userId'] = $user->id_u;
+}
 ?>
 
 

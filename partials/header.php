@@ -1,4 +1,14 @@
 <header>
+
+        <?php 
+            $pdoStatement = $pdo->prepare("SELECT pseudo FROM Utilisateur WHERE id_u = :id"); 
+            $pdoStatement->execute([
+            ':id' => $_SESSION['userId']
+             ]);
+            $name = $pdoStatement->fetch();
+        ?>
+        <p style= "font-size: 2vw; color:#a9a7ce ; padding-left : 40px;"><?php echo $name -> pseudo ?></p>
+
             <div class="lien">
                 <div class="tete">The Power Of Memory</div>
                 
