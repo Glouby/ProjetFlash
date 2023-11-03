@@ -33,6 +33,14 @@ $NamePage = "score";
     
     $pdoStatement->execute();
     $Scores = $pdoStatement->fetchAll();
+    }
+    
+    if(isset($_SESSION['userId'])){
+        $pdoStatement = $pdo->prepare('SELECT pseudo FROM Utilisateur WHERE id_u = :id');
+        $pdoStatement->execute([
+            ':id' => $_SESSION['userId']
+        ]);
+        $name = $pdoStatement->fetch();
     }?>
 
 
@@ -69,11 +77,21 @@ $NamePage = "score";
         </tr>
         <?php foreach($Scores as $score ): ?>
         <tr>
-            <td id="Pseudo-case"> <?php echo $score -> pseudo ?> </td>
-            <td id="Level-case"> <?php echo $score -> niv ?> </td>
-            <td id="Score-case"> <?php echo $score -> score ?> </td>
-            <td id="Date-case"> <?php echo $score -> date_heure_score ?> </td>
-            <td id="Hour-case"> <?php echo $score -> nom_jeu ?> </td>
+            <td id="Pseudo-case"
+            <?php if(isset($_SESSION['userId'])): if($score -> pseudo == $name -> pseudo) : ?> style="background-color:#a9a7ce;"
+            <?php endif ?> <?php endif ?>> <?php echo $score -> pseudo ?> </td>
+            <td id="Level-case"
+            <?php if(isset($_SESSION['userId'])): if($score -> pseudo == $name -> pseudo) : ?> style="background-color:#a9a7ce;"
+            <?php endif ?> <?php endif ?>> <?php echo $score -> niv ?> </td>
+            <td id="Score-case"
+            <?php if(isset($_SESSION['userId'])): if($score -> pseudo == $name -> pseudo) : ?> style="background-color:#a9a7ce;"
+            <?php endif ?> <?php endif ?>> <?php echo $score -> score ?> </td>
+            <td id="Date-case"
+            <?php if(isset($_SESSION['userId'])): if($score -> pseudo == $name -> pseudo) : ?> style="background-color:#a9a7ce;"
+            <?php endif ?> <?php endif ?>> <?php echo $score -> date_heure_score ?> </td>
+            <td id="Hour-case"
+            <?php if(isset($_SESSION['userId'])): if($score -> pseudo == $name -> pseudo) : ?> style="background-color:#a9a7ce;"
+            <?php endif ?> <?php endif ?>> <?php echo $score -> nom_jeu ?> </td>
         </tr> 
         <?php endforeach; ?>
 
