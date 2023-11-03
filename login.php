@@ -5,14 +5,14 @@ $NamePage = 'login';
 
 if (!empty($_GET["email"])){
     $email = $_GET["email"];
-}else{
-    $email = null;
-}
-if (!empty($_GET["password"])){
-    $password = $_GET["password"];
-}else{
-    $password = null;
-}
+        }else{
+            $email = null;
+        }
+        if (!empty($_GET["password"])){
+            $password = $_GET["password"];
+        }else{
+            $password = null;
+        }
 
 
 $pdoStatement = $pdo->prepare("SELECT id_u FROM Utilisateur WHERE mdp = :mdp AND email = :email ");
@@ -21,6 +21,7 @@ $pdoStatement->execute([
     ':email'=>$email
 ]);
 $user = $pdoStatement->fetch();
+
 if($user != null){
     $_SESSION['userId'] = $user->id_u;
 }
