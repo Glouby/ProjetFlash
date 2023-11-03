@@ -68,6 +68,13 @@ if($user != null){
         </div>             
     </form>
 
+    <form action="disconnect.php">
+    <div class="input-bouton" style="color: red;">
+        <label for="bouton"></label>
+        <input class="bouton" style="background-color: red;" type="submit" value="Déconnexion">
+    </div>  
+    </form>
+
     <?php
         require 'partials/footer.php';
     ?>
