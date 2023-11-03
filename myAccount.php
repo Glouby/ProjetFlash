@@ -157,7 +157,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                         <label for="password"></label>
                         <input class="box" type="password" name="change_password" id="pseudo" placeholder="Ancien mot de passe">
 
-                        <?php if (filter_var(hash('sha256', $change_password) == $password_u -> mdp) && $validation_mdp != 4): 
+                        <?php if (hash('sha256', $change_password) == $password_u -> mdp && $validation_mdp != 4): 
                             $validation_mdp += 1;?>
                             <p style="color: green;"> Le mot de passe est valide. </p>
                         <?php elseif($change_password != null): 
@@ -174,7 +174,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                             <p style="color: green;"> Le mot de passe est considérée comme valide. </p>
                         <?php elseif($new_password != null): 
                             $validation_mdp = 0;?>
-                            <p style="color: red;"> Le pseudo doit : <br>
+                            <p style="color: red;"> Le mot de passe doit : <br>
                             - Faire au minimum 8 caractères <br>
                             - Comprendre au moins un chiffre <br>
                             - Comprendre au moins une majuscule <br>
@@ -227,6 +227,8 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
         require 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
+
+    <?php session_destroy() ?>
 
 </body>
 

@@ -62,7 +62,7 @@ if($user != null){
                 <input class="bouton" type="submit" value="Connexion">
             </div>  
 
-            <?php if ($_SESSION['userId'] != null): ?>
+            <?php if (isset($_SESSION['userId']) && $_SESSION['userId'] != null): ?>
                 <p style="text-align: center; font-size:1.5vw">Vous êtes connecté(e)</p>
             <?php endif ?>
         </div>             
