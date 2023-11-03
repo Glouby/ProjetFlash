@@ -1,4 +1,14 @@
 <header>
+
+        <?php 
+            $pdoStatement = $pdo->prepare("SELECT pseudo FROM Utilisateur WHERE id_u = :id"); 
+            $pdoStatement->execute([
+            ':id' => $_SESSION['userId']
+             ]);
+            $name = $pdoStatement->fetch();
+        ?>
+        <p style= "font-size: 1vw; color:#a9a7ce ; padding-left : 40px;"><?php echo $name -> pseudo ?></p>
+
             <div class="lien">
                 <div class="tete">The Power Of Memory</div>
                 
@@ -17,17 +27,16 @@
                             <?php else:?>
                                 <li><a href="<?= PROJECT_FOLDER ?>games/memory/index.php">JEU</a></li>
                             <?php
-                             endif; ?>
+                            endif; ?>
 
 
-                         <?php if($NamePage =="score"):?>
+                        <?php if($NamePage =="score"):?>
                             <li><a class="orange" href="<?= PROJECT_FOLDER ?>games/memory/scores.php">SCORES</a></li>
                             <?php else:?>
                             <li><a  href="<?= PROJECT_FOLDER ?>games/memory/scores.php">SCORES</a></li>
                         <?php
                         endif; ?>
                         
-                       
                         <?php  if($NamePage=="contact"):?>  
                             <li><a class="orange" href= "<?= PROJECT_FOLDER ?>contact.php">NOUS CONTACTER</a></li>
                             <?php else:?>

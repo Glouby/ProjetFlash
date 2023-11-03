@@ -71,7 +71,7 @@ $les_pseudo = $tt_pseudo->fetchAll();
                 <label for="pseudo"></label>
                 <input class="box" type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
                 <?php 
-                if (preg_match($pattern_pseudo, $pseudo) && $validation != 4):
+                if (preg_match($pattern_pseudo, $pseudo??"") && $validation != 4):
                     $validation += 1;?>
                     <p style="color: green;"> Le pseudo est considérée comme valide. </p>
                 <?php elseif($pseudo != null): 
@@ -83,7 +83,7 @@ $les_pseudo = $tt_pseudo->fetchAll();
                 <label for="password"></label>
                 <input class="box" type="password" name="password" id="password" placeholder="Mot de passe">
                 <?php 
-                if (preg_match($pattern_password, $password) && $validation != 4):
+                if (preg_match($pattern_password, $password??"") && $validation != 4):
                     $validation += 1;?>
                     <p style="color: green;"> Le mot de passe est considérée comme valide. </p>
                 <?php elseif($password != null): 

@@ -93,6 +93,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
 
         </div>
 
+
         <div class="aligner">
             <div class="motdepass">
                 <h2>Changement de mot de passe</h2>
@@ -144,8 +145,9 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                         <?php endif; ?>
                     </div>
 
+
                     <div>
-                        <input class="bouton" type="submit" value="Confirmer">
+                        <input class="bouton" type="submit" value="Inscription">
                     </div>
                 </form>
             </div>

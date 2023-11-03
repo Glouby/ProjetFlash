@@ -17,7 +17,7 @@ if (!empty($_GET["email"])){
 
 $pdoStatement = $pdo->prepare("SELECT id_u FROM Utilisateur WHERE mdp = :mdp AND email = :email ");
 $pdoStatement->execute([
-    ':mdp'=> hash('sha256', $password),
+    ':mdp'=> hash('sha256', $password??''),
     ':email'=>$email
 ]);
 $user = $pdoStatement->fetch();
