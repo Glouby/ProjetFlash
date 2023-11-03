@@ -136,7 +136,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                         <label for="password"></label>
                         <input class="box" type="password" name="password" id="pseudo" placeholder="Mot de passe">
 
-                        <?php if (hash('sha256', $password) == $password_u -> mdp && $validation != 4): 
+                        <?php if (hash('sha256', $password??'') == $password_u -> mdp && $validation != 4): 
                             $validation += 1;?>
                             <p style="color: green;"> Le mot de passe est valide. </p>
                         <?php elseif($password != null): 
@@ -157,7 +157,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                         <label for="password"></label>
                         <input class="box" type="password" name="change_password" id="pseudo" placeholder="Ancien mot de passe">
 
-                        <?php if (hash('sha256', $change_password) == $password_u -> mdp && $validation_mdp != 4): 
+                        <?php if (hash('sha256', $change_password??'') == $password_u -> mdp && $validation_mdp != 4): 
                             $validation_mdp += 1;?>
                             <p style="color: green;"> Le mot de passe est valide. </p>
                         <?php elseif($change_password != null): 
@@ -169,7 +169,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                         <label for="new_password"></label>
                         <input class="box" type="password" name="new_password" id="password" placeholder="Nouveau Mot de passe">
 
-                        <?php if (preg_match($pattern_password, $new_password) && $validation_mdp != 4):
+                        <?php if (preg_match($pattern_password, $new_password??'') && $validation_mdp != 4):
                             $validation_mdp += 1;?>
                             <p style="color: green;"> Le mot de passe est considérée comme valide. </p>
                         <?php elseif($new_password != null): 
@@ -227,8 +227,6 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
         require 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
-
-    <?php session_destroy() ?>
 
 </body>
 
