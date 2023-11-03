@@ -104,7 +104,7 @@ $les_pseudo = $tt_pseudo->fetchAll();
                     <p style="color: green;"> La confirmation du mot de passe est considérée comme valide. </p>
                 <?php elseif($conf_password != null): 
                     $validation = 0;?>
-                    <p style="color: red;"> Le mot de passe doit être identique à sa confirmation . </p>
+                    <p style="color: red;"> La confirmation du mot de passe doit être identique. </p>
                 <?php endif; ?>
             </div>
             <div>
