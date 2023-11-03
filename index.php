@@ -31,7 +31,7 @@ $NamePage = 'home';
             <p class="le_p">Venez challenger les cerveaux les plus agiles !</p>
         </center>
         <div class="play-button-container">
-            <a href="memory.php" class="play-button">Jouer !</a>
+            <a href="<?= PROJECT_FOLDER ?>games/memory/index.php" class="play-button">Jouer !</a>
         </div>
 
         <br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/>
