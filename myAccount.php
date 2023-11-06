@@ -96,10 +96,10 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
 
         <div class="aligner">
             <div class="motdepass">
-                <h2>Changement de mot de passe</h2>
+                <h2>Changement email</h2>
             </div>
             <div class="adressmail">
-                <h2>Changement email</h2>
+                <h2>Changement de mot de passe</h2>
             </div>
         </div>
 
