@@ -653,9 +653,6 @@ body{
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    height: 15.372vw;
-    margin: 0;
 }
 
 .chat .chat-box {
@@ -682,7 +679,8 @@ body{
 .chat .message {
     margin: 0.694vw 0;
     border-radius: 5%;
-    width: 6.944vw;
+    width: 11.944vw;
+    height: 2vw;
 }
 
 .chat .Hour-moi {
@@ -796,8 +794,10 @@ body{
 
 .chat .chat-input {
     display: flex;
-    padding: 3.194vw 0 0.694vw 0;
-  }
+    padding: 3.194vw 0 0 0;
+    height: 16vw;
+    align-items: center;
+}
 .chat #message-input {
     flex: 1;
     padding: 0.347vw;

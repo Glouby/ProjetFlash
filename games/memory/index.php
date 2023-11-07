@@ -3,18 +3,48 @@ require '../../utils/common.php';
 require '../../utils/database.php';
 $NamePage = "game";
 ?>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Envoyer'])){
+    if(isset($_SESSION['userId']) && !empty($_POST['message'])){
+        postMessage();
+        } else {
+        getMessage();
+    }
+}
 
+function getMessage(){
+    global $pdo;
+    $resultat = $pdo -> query("SELECT message, pseudo, date_heure_m 
+    FROM Utilisateur 
+    JOIN Message ON Utilisateur.id_u = Message.id_exp
+    WHERE date_heure_m <= NOW() + INTERVAL 1 DAY") ;
+    $messages = $resultat -> fetchAll();
+    echo json_encode($messages);
+}
+
+function postMessage(){
+    global $pdo;
+    $userId = $_SESSION['userId'];
+    $messages = $_POST['message'];
+    $query = $pdo->query(" SELECT id_exp, message FROM Utilisateur JOIN Message ON Message.id_exp = Utilisateur.id_u WHERE id_exp = :userId;
+        INSERT INTO Message SET id_exp = :userId, message = :messageries, date_heure_m = NOW()");
+    $query -> execute([ 
+        "userId" => $userId, 
+        "messageries" => $messages
+    ]);
+}
+?>
 
 
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-        require SITE_ROOT . 'partials/head.php';
-    ?>
+    require SITE_ROOT . 'partials/head.php';
+?>
 <body class="jeu">
 <?php
-        require SITE_ROOT . 'partials/header.php';
-    ?>
+    require SITE_ROOT . 'partials/header.php';
+?>
     <div class="title">
         <h1>JEU</h1>
     </div> 
@@ -132,45 +162,21 @@ $NamePage = "game";
         </tr>
     </table>
 
-    <div class="chat">
+        <!-- chat du jeu -->
+    <section class="chat">
         <div class="chat-box">
             <div class="chat-header">
             <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
                 Chat General
             </div>
-    
-            <div class="chat-messages">
-    
-                <div class="Moi">Moi</div> 
-                <div class="Mes-messages">
-                    <div class="mot"> Hello </div>
-                </div>
-                <div class="Hour-moi"> Aujoud'hui à 15h22 </div>
-    
-                <div class="message">
-    
-                <div class="user">User 1</div>
-                    <div class="image">
-                    <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Pdp'>
-                    <div class="text"> hvjdhzlkdhazpodbjrz <br>
-                            dklazjazlkdezalkdjazlkdjzakdjazldkjazkldjazl
-                    </div>
-                </div>  
-                <div class="Hour-User">Aujoud'hui à 15h30</div>
-                    <div class="Moi2">Moi</div> 
-                    <div class="Mes-messages2">
-                        <div class="mot2"> wowy c'est incroyable </div>
-                    </div>
-
-                    </div>
-                <div class="Hour-moi2"> Aujoud'hui à 15h22 </div>
+            <form method="POST" action="" class="chat-messages">
                 <div class="chat-input">
-                    <input type="text" id="message-input" placeholder="Votre message...">
-                    <button id="send-button">Envoyer</button>
+                    <input name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
+                    <input type="submit" name="Envoyer" id="button">
                 </div>
-            </div>
+            </form>
         </div>  
-    </div>
+    </section>
 
 
     <?php

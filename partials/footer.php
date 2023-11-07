@@ -9,7 +9,7 @@
                         <p class="info"><span class="orange">Email :</span> support@powerofmemory.com</p>
                         <p class="location"><span class="orange">Location :</span> Paris</p>
                 </div>
-
+                
                         <div class="logo-info">
                         <div class="logo"><i class="fa-brands fa-square-facebook" style="color: #ec9123;"></i></div>
                         <div class="logo"><i class="fa-brands fa-square-twitter" style="color: #ec9123;"></i></div>

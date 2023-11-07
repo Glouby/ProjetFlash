@@ -44,7 +44,7 @@ if($user != null){
         <h1>CONNEXION</h1>
     </div>   
 
-  <!-- les informations pour la connexion-->
+<!-- les informations pour la connexion-->
     <form method="get"> 
         <div class="Space">
             <div class="input">
