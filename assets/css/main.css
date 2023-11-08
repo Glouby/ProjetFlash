@@ -403,12 +403,7 @@
     text-align: center;
 }
 
-.jeu .carte {
-    border-radius: 5%;
-    height: 6.944vw;
-    width: 6.944vw;
-    margin: 0 2.431vw 0 0;
-}
+
 .jeu .tableau{
     display: flex;
     justify-content: center;
@@ -919,4 +914,46 @@ body{
     align-items: center;
     color: white;
     font-size: 2vw;
+}
+
+
+
+.jeu .carte {
+    border-radius: 5%;
+    height: 6.944vw;
+    width: 6.944vw;
+    margin: 0 2.431vw 0 0;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+/* Styles pour la victoire popup */
+.victory-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid orange;
+    text-align: center;
+    z-index: 1000;
+}
+
+.victory-popup p {
+    font-size: 18px;
+    color: black;
+}
+
+.victory-popup.show {
+    display: block;
 }
