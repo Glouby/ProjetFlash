@@ -28,7 +28,7 @@ if (!empty($_GET["conf_password"])){
 $validation = 0;
 
 $pattern_pseudo = '/^.{4,}$/'; 
-$pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'; 
+$pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/'; 
 
 $inscription = $pdo->prepare('INSERT INTO Utilisateur(email, mdp, pseudo) VALUES (:email, :mdp, :pseudo)');
 $tt_pseudo = $pdo->prepare('SELECT pseudo FROM Utilisateur');
@@ -81,20 +81,25 @@ $les_pseudo = $tt_pseudo->fetchAll();
             </div>
             <div>
                 <label for="password"></label>
-                <input class="box" type="password" name="password" id="password" placeholder="Mot de passe">
+                <input class="box" type="password" name="password" id="password" oninput="validatePassword()" placeholder="Mot de passe">
+                <div id="strength-bar-container" style="margin-top: 10px; height: 10px; background-color: #100e2e; border-radius: 4px; overflow: hidden; margin-right:450px; display:none;">
+                    <div id="strength-bar" style="height: 100%; width: 0; transition: width 0.3s ease; margin-top:0;"></div>
+                </div>
+                <p id="message"></p>
                 <?php 
                 if (preg_match($pattern_password, $password??"") && $validation != 4):
                     $validation += 1;?>
                     <p style="color: green;"> Le mot de passe est considérée comme valide. </p>
                 <?php elseif($password != null): 
                     $validation = 0;?>
-                    <p style="color: red;"> Le pseudo doit : <br>
+                    <p style="color: red;"> Le mot de passe doit : <br>
                     - Faire au minimum 8 caractères <br>
                     - Comprendre au moins un chiffre <br>
                     - Comprendre au moins une majuscule <br>
-                    - Comprendre au moins un caractère spécial <br> </p>
+                    - Comprendre au moins un caractère spécial comme !@#$%^&*(),.?":{}|<> <br> </p>
                 <?php endif; ?>
-            </div>
+             </div>
+             <script src="register.js"></script>
             <div>
                 <label for="password"></label>
                 <input class="box" type="password" name="conf_password" id="password" placeholder="Confirmez le mot de passe">
@@ -108,7 +113,7 @@ $les_pseudo = $tt_pseudo->fetchAll();
                 <?php endif; ?>
             </div>
             <div>
-                <input class="bouton" type="submit" value="Inscription">
+                <input class="bouton"type="submit" value="Inscription">
             </div>
         </form>
     </div>

@@ -62,7 +62,7 @@ if (!empty($_GET["new_password"])){
 $validation=0;
 $validation_mdp = 0;
 
-$pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'; 
+$pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/'; 
 ?>
 
 
@@ -94,11 +94,11 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
         </div>
 
 
-        <div class="aligner">
-            <div class="motdepass">
+        <div style="display: flex;">
+            <div style="color: white; font-size: 1.2vw; margin-left: 15vw;">
                 <h2>Changement email</h2>
             </div>
-            <div class="adressmail">
+            <div style="color: white; font-size: 1.2vw; margin-left: 35vw;">
                 <h2>Changement de mot de passe</h2>
             </div>
         </div>
@@ -167,7 +167,11 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                     </div>
                     <div class="espace">
                         <label for="new_password"></label>
-                        <input class="box" type="password" name="new_password" id="password" placeholder="Nouveau Mot de passe">
+                        <input class="box" type="password" name="new_password" id="password" oninput="validatePassword()" placeholder="Nouveau Mot de passe">
+                        <div id="strength-bar-container" style="margin-top: 10px; height: 10px; background-color: #100e2e; border-radius: 4px; overflow: hidden; display:none;">
+                        <div id="strength-bar" style="height: 100%; width: 0; transition: width 0.3s ease; margin-top:0;"></div>
+                        </div>
+                        <p id="message"></p>
 
                         <?php if (preg_match($pattern_password, $new_password??'') && $validation_mdp != 4):
                             $validation_mdp += 1;?>
@@ -178,8 +182,9 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                             - Faire au minimum 8 caractères <br>
                             - Comprendre au moins un chiffre <br>
                             - Comprendre au moins une majuscule <br>
-                            - Comprendre au moins un caractère spécial <br> </p>
+                            - Comprendre au moins un caractère spécial comme !@#$%^&*(),.?":{}|<>] <br> </p>
                         <?php endif; ?>
+                        <script src="register.js"></script>
                     </div>
                     <div class="espace">
                         <label for="conf_password"></label>

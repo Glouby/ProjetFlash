@@ -365,6 +365,7 @@ function tourne_image(index) {
 function tableCreate() {
     var tab = creer_tab(choix_niv);
     shuffle(tab);
+    shuffle(tab);
     const tableau = document.getElementById('tableau');
     const tbl = document.createElement('table');
     tbl.style.width = '100px';

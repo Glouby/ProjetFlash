@@ -23,7 +23,7 @@ if($a_score == null){
 
 
 elseif($score < $a_score -> score){
-    $new_score = $pdo->prepare("UPDATE Score SET score = :new_score WHERE id_u = :id AND niv = :niv;"); 
+    $new_score = $pdo->prepare("UPDATE Score SET score = :new_score, date_heure_score = CURRENT_TIMESTAMP WHERE id_u = :id AND niv = :niv;"); 
     $new_score->execute([
         ':id' => $_SESSION['userId'],
         ':niv' => $difficulte,
