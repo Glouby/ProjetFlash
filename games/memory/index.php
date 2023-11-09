@@ -4,20 +4,13 @@ require '../../utils/database.php';
 $NamePage = "game";
 ?>
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Envoyer'])){
-    if(isset($_SESSION['userId']) && !empty($_POST['message'])){
-        postMessage();
-        } else {
-        getMessage();
-    }
-}
 
 function getMessage(){
     global $pdo;
     $resultat = $pdo -> query("SELECT message, pseudo, date_heure_m 
     FROM Utilisateur 
     JOIN Message ON Utilisateur.id_u = Message.id_exp
-    WHERE date_heure_m <= NOW() + INTERVAL 1 DAY") ;
+    WHERE date_heure_m <= NOW() + INTERVAL 1 DAY");
     $messages = $resultat -> fetchAll();
     echo json_encode($messages);
 }
@@ -25,16 +18,16 @@ function getMessage(){
 function postMessage(){
     global $pdo;
     $userId = $_SESSION['userId'];
-    $messages = $_POST['message'];
-    $query = $pdo->query(" SELECT id_exp, message FROM Utilisateur JOIN Message ON Message.id_exp = Utilisateur.id_u WHERE id_exp = :userId;
-        INSERT INTO Message SET id_exp = :userId, message = :messageries, date_heure_m = NOW()");
-    $query -> execute([ 
-        "userId" => $userId, 
-        "messageries" => $messages
+    $message = $_POST['message'];
+    $pdoStatement = $pdo->prepare("INSERT INTO Message (id_j, id_exp, message, date_heure_m) VALUES ( :idJ, :userId, :message, NOW())");
+    $pdoStatement -> execute([ 
+        "idJ" => 1,
+        ":userId" => $userId, 
+        ":message"=> $message
     ]);
+    echo json_encode($message);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -161,27 +154,53 @@ function postMessage(){
             <td><img src= "<?= PROJECT_FOLDER ?>assets/image/carte.jpeg" class='carte'></td>
         </tr>
     </table>
+    <!-- chat du jeu -->
+    <script>
 
-        <!-- chat du jeu -->
+    </script>
     <section class="chat">
         <div class="chat-box">
             <div class="chat-header">
             <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
                 Chat General
             </div>
+            <?php
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+                if(isset($_SESSION['userId']) && !empty($_POST['message'])){
+                    postMessage();
+                }else{ 
+                    getMessage();
+                }
+            }
+            ?>
             <form method="POST" action="" class="chat-messages">
                 <div class="chat-input">
-                    <input name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
-                    <input type="submit" name="Envoyer" id="button">
+                    <input type="text" name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
+                    <input type="button" onclick="functionAjax()" value="Envoyer" id="Envoyer">
                 </div>
             </form>
         </div>  
     </section>
-
-
     <?php
         require SITE_ROOT . 'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
+    <script>
+    
+    function functionAjax(){
+        var text = document.getElementById("messagerie").value;
+        let request =
+    $.ajax({
+        type: "POST",
+        url: "index.php", 
+        data: {'message': text}
+    });
+    request.done(function (output) {
+        document.getElementById("messagerie").animate([
+        
+        ]);
+        });
+    }
+    </script>
 </body>
 </html>

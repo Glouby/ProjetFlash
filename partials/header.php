@@ -11,6 +11,7 @@
         <p style= "font-size: 1vw; color:#a9a7ce ; padding-left : 40px;"><?php echo $name -> pseudo ?></p>
         <?php endif ?>
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
             <div class="lien">
                 <div name="nomjeu" class="tete">The Power Of Memory</div>
                 

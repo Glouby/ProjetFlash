@@ -794,9 +794,8 @@ body{
 
 .chat .chat-input {
     display: flex;
-    padding: 3.194vw 0 0 0;
     height: 16vw;
-    align-items: center;
+    align-items: flex-end;
 }
 .chat #message-input {
     flex: 1;
