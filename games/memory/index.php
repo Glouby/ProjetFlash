@@ -2,9 +2,60 @@
 require '../../utils/common.php';
 require '../../utils/database.php';
 $NamePage = "game";
-
 ?>
 
+<?php 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_SESSION['userId']) && !empty($_POST['message'])){
+                postMessage();        
+            } else {
+                getMessage(); 
+        }
+    }
+?>
+<?php
+function getMessage() {
+    global $pdo;
+    $userId = $_SESSION['userId'];
+    $resultat = $pdo->query("SELECT message, pseudo, date_heure_m, id_exp 
+        FROM Utilisateur 
+        JOIN Message ON Utilisateur.id_u = Message.id_exp
+        WHERE date_heure_m >= NOW() - INTERVAL 1 DAY
+        ORDER BY date_heure_m ASC");
+
+    $messages = $resultat->fetchAll();
+
+    foreach ($messages as $message) {
+        $messageContent = $message->message;
+        $messageSender = $message->id_exp;
+        $pseudo = $message->pseudo;
+        $date = $message->date_heure_m;
+    
+        // Ajoutez une classe différente en fonction de l'expéditeur du message
+        $class = ($messageSender == $userId) ? 'message-envoye' : 'message-recu';
+    
+        // Utilisez la classe pour styliser le message
+        echo "<div class='div_message'> 
+        <span class='message-pseudo'>$pseudo</span>
+        <p class='message $class'>$messageContent</p>
+        <span class='message-date'>$date</span>
+        </div>";
+    }    
+}
+
+
+function postMessage(){
+    global $pdo;
+    $userId = $_SESSION['userId'];
+    $message = $_POST['message'];
+    $pdoStatement = $pdo->prepare("INSERT INTO Message (id_j, id_exp, message, date_heure_m) VALUES ( :idJ, :userId, :message, NOW())");
+    $pdoStatement -> execute([ 
+        "idJ" => 1,
+        ":userId" => $userId, 
+        ":message"=> $message
+    ]);
+}
+?>
 
 
 <!DOCTYPE html>
@@ -149,45 +200,76 @@ $NamePage = "game";
         </div>
 
         
-        <div class="chat">
-            <div class="chat-box">
-                <div class="chat-header">
-                <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
-                    Chat General
-                </div>
+        <section class="chat">
+        <div class="chat-box">
+            <div class="chat-header">
+            <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
+                Chat General
+            </div>
         
-                <div class="chat-messages">
-        
-                    <div class="Moi">Moi</div> 
-                    <div class="Mes-messages">
-                        <div class="mot"> Hello </div>
-                    </div>
-                    <div class="Hour-moi"> Aujoud'hui à 15h22 </div>
-        
-                    <div class="message">
-        
-                    <div class="user">User 1</div>
-                        <div class="image">
-                        <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Pdp'>
-                        <div class="text"> hvjdhzlkdhazpodbjrz <br>
-                                dklazjazlkdezalkdjazlkdjzakdjazldkjazkldjazl
-                        </div>
-                    </div>  
-                    <div class="Hour-User">Aujoud'hui à 15h30</div>
-                        <div class="Moi2">Moi</div> 
-                        <div class="Mes-messages2">
-                            <div class="mot2"> wowy c'est incroyable </div>
-                        </div>
+            <div id="msg" class="chat-messages">
+                <?php getMessage(); ?>
+            </div>
 
-                        </div>
-                    <div class="Hour-moi2"> Aujoud'hui à 15h22 </div>
-                    <div class="chat-input">
-                        <input type="text" id="message-input" placeholder="Votre message...">
-                        <button id="send-button">Envoyer</button>
-                    </div>
-                </div>
-            </div>  
-        </div>
+        
+            <div class="chat-input">
+                <input type="text" name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
+                <input type="button" onclick="functionAjax()" value="Envoyer" id="Envoyer">
+            </div>
+        </div>  
+    </section>
+    <a href="#" class="le_btn">^</a>
+
+    <script>
+        function functionAjax() {
+            var text = document.getElementById("messagerie").value;
+
+            let request = $.ajax({
+                type: "POST",
+                url: "index.php",
+                data: { 'message': text }
+            });
+
+            request.done(function (output) {
+                // Code à jouer en cas d'exécution sans erreur du script PHP
+                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+                // Ajoute le message à la boîte de chat
+                const chatBox = document.getElementById('msg');
+                const newMessage = document.createElement('p');
+                newMessage.className = 'message-envoye';
+                newMessage.textContent = text;
+                chatBox.appendChild(newMessage);
+            });
+        }
+
+        var input = document.getElementById("messagerie");
+        input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            var text = document.getElementById("messagerie").value;
+            let request =
+            $.ajax({
+                    type: "POST",
+                    url: "index.php", 
+                    data: {'message': text}
+                });
+                request.done(function (output) {
+                // Code à jouer en cas d'exécution sans erreur du script PHP
+                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+                // Ajoute le message à la boîte de chat
+                const chatBox = document.getElementById('msg');
+                const newMessage = document.createElement('p');
+                newMessage.className = 'message-envoye';
+                newMessage.textContent = text;
+                chatBox.appendChild(newMessage);
+            });
+
+            document.getElementById("myBtn").click();
+            msg.innerHTML="msg";
+        }});
+
+    </script>
         <?php else :?>
         <p style="text-align:center; font-size: 2vw;"> Vous n'êtes pas connecté(e)</p>
     <?php endif ?>
