@@ -20,7 +20,7 @@ if($a_score == null){
         ':score' => $score
     ]);
 }
-elseif($a_score < $score){
+elseif($a_score > $score){
     $pdoStatement = $pdo->prepare("UPDATE Score SET score = :score WHERE id_u = :id AND niv = :niv;"); 
     $pdoStatement->execute([
         ':id' => $_SESSION['userId'],

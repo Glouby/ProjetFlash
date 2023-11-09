@@ -65,8 +65,8 @@ $NamePage = "game";
             function formatTime(ms) {
                 const minutes = Math.floor(ms / 60000);
                 const seconds = Math.floor((ms % 60000) / 1000);
-                const milliseconds = (ms % 1000).toString().slice(0, 2); // Obtenez les deux premiers chiffres des millisecondes
-                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.padStart(2, '0')}`;
+                const milliseconds = (ms % 1000).toString().padStart(3, '0');
+                return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds}`;
             }
 
 
@@ -348,6 +348,7 @@ function tourne_image(index) {
         }
     }, 100); // Attendre 0.1 seconde (100 millisecondes) avant la rotation
 }
+
 
 
 
