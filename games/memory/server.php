@@ -5,7 +5,7 @@ require '../../utils/database.php';
 $score = $_POST['score'];
 $difficulte = $_POST['difficulte'];
 
-$pdoStatement = $pdo->prepare("SELECT score FROM Utilisateur JOIN Score ON Utilisateur.id_u = Score.id_u WHERE Score.id_u = :id AND niv = :niv;"); 
+$pdoStatement = $pdo->prepare("SELECT score FROM Score WHERE Score.id_u = :id AND niv = :niv;"); 
 $pdoStatement->execute([
     ':id' => $_SESSION['userId'],
     ':niv' => $difficulte
@@ -20,12 +20,14 @@ if($a_score == null){
         ':score' => $score
     ]);
 }
-elseif($a_score > $score){
-    $pdoStatement = $pdo->prepare("UPDATE Score SET score = :score WHERE id_u = :id AND niv = :niv;"); 
-    $pdoStatement->execute([
+
+
+elseif($score < $a_score -> score){
+    $new_score = $pdo->prepare("UPDATE Score SET score = :new_score WHERE id_u = :id AND niv = :niv;"); 
+    $new_score->execute([
         ':id' => $_SESSION['userId'],
         ':niv' => $difficulte,
-        ':score' => $score
+        ':new_score' => $score
     ]);
 }
 ?>

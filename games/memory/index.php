@@ -135,8 +135,12 @@ $NamePage = "game";
         
         <div id="victory-popup" class="victory-popup">
             <p>Félicitations ! Vous avez terminé le jeu en <span id="victory-time">00:00:00</span>.</p>
-            <button id="rejouer-button-popup">Rejouer</button>
+            <div style="display: flex;">
+                <button id="rejouer-button-popup" style="margin-right: 1vw;">Rejouer</button>
+                <button id="score-button-popup">Voir le score</button>
+            </div>
         </div>
+
 
 
 
@@ -386,12 +390,10 @@ function tableCreate() {
 }
 
 
+const scoreButtonPopup = document.getElementById('score-button-popup');
 
-
-
-
-
-
-
+scoreButtonPopup.addEventListener('click', function() {
+    window.location.href = "<?= PROJECT_FOLDER ?>games/memory/scores.php";
+});
 </script>
 </html>
