@@ -55,7 +55,7 @@
                         <?php
                         endif; ?>
 
-                        <?php if($NamePage == "registe"):?>
+                        <?php if($NamePage == "register"):?>
                             <li><a class="orange" href= "<?= PROJECT_FOLDER ?>register.php">INSCRIPTION </a></li>
                         <?php else:?>
                             <li><a href= "<?= PROJECT_FOLDER ?>register.php">INSCRIPTION</a></li>

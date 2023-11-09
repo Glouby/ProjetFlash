@@ -2,7 +2,7 @@
 require 'utils/common.php';
 require 'utils/database.php';
 
-$NamePage = 'registe';
+$NamePage = 'register';
 
 if (!empty($_GET["email"])){
     $email = $_GET["email"];
