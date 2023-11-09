@@ -14,7 +14,7 @@ $NamePage = "score";
         (
             CASE niv
                 WHEN "Difficile" THEN 3
-                WHEN "Normal" THEN 2
+                WHEN "Moyen" THEN 2
                 WHEN "Facile" THEN 1
             END
         ), score ASC;');
@@ -27,7 +27,7 @@ $NamePage = "score";
     (
         CASE niv
             WHEN "Difficile" THEN 3
-            WHEN "Normal" THEN 2
+            WHEN "Moyen" THEN 2
             WHEN "Facile" THEN 1
         END
     ), score ASC;');
