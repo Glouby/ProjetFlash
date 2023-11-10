@@ -30,18 +30,18 @@ function getMessage() {
         $messageSender = $message->id_exp;
         $pseudo = $message->pseudo;
         $date = $message->date_heure_m;
-    
-        // Ajoutez une classe différente en fonction de l'expéditeur du message
         $class = ($messageSender == $userId) ? 'message-envoye' : 'message-recu';
+        $alignClass = ($messageSender == $userId) ? 'align-right' : 'align-left';
     
-        // Utilisez la classe pour styliser le message
         echo "<div class='div_message'> 
-        <span class='message-pseudo'>$pseudo</span>
-        <p class='message $class'>$messageContent</p>
-        <span class='message-date'>$date</span>
+            <span class='message-pseudo $alignClass' data-pseudo='$pseudo' data-date='$date'>$pseudo</span>
+            <p class='message $class'>$messageContent</p>
+            <span class='message-date $alignClass' data-date='$date'>$date</span>
         </div>";
     }    
 }
+
+
 
 
 function postMessage(){
@@ -222,26 +222,57 @@ function postMessage(){
 
     <script>
         function functionAjax() {
-            var text = document.getElementById("messagerie").value;
+    var text = document.getElementById("messagerie").value;
 
-            let request = $.ajax({
-                type: "POST",
-                url: "index.php",
-                data: { 'message': text }
-            });
+    let request = $.ajax({
+        type: "POST",
+        url: "index.php",
+        data: { 'message': text }
+    });
 
-            request.done(function (output) {
-                // Code à jouer en cas d'exécution sans erreur du script PHP
-                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+    request.done(function (output) {
+        let dateActuelle = new Date();
+        let jour = dateActuelle.getDate();
+        let mois = dateActuelle.getMonth() + 1;
+        let annee = dateActuelle.getFullYear();
+        let heures = dateActuelle.getHours();
+        let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
+        let secondes = dateActuelle.getSeconds();
+        let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
+        var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
 
-                // Ajoute le message à la boîte de chat
-                const chatBox = document.getElementById('msg');
-                const newMessage = document.createElement('p');
-                newMessage.className = 'message-envoye';
-                newMessage.textContent = text;
-                chatBox.appendChild(newMessage);
-            });
-        }
+        // Code à jouer en cas d'exécution sans erreur du script PHP
+        document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+        // Ajoute le message à la boîte de chat
+        const chatBox = document.getElementById('msg');
+        const newMessage = document.createElement('div');
+        newMessage.className = 'div_message';
+
+        // Ajouter le pseudo
+        const pseudoSpan = document.createElement('span');
+        pseudoSpan.className = 'message-pseudo align-right';
+        pseudoSpan.textContent = pseudo;
+        pseudoSpan.setAttribute('data-pseudo', pseudo);
+        newMessage.appendChild(pseudoSpan);
+
+        // Ajouter le message
+        const messageP = document.createElement('p');
+        messageP.className = 'message message-envoye';
+        messageP.textContent = text;
+        newMessage.appendChild(messageP);
+
+        // Ajouter la date
+        const dateSpan = document.createElement('span');
+        dateSpan.className = 'message-date align-right';
+        dateSpan.textContent = dateHeureFormattee;
+        dateSpan.setAttribute('data-date', dateHeureFormattee);
+        newMessage.appendChild(dateSpan);
+
+        chatBox.appendChild(newMessage);
+    });
+}
+
 
         var input = document.getElementById("messagerie");
         input.addEventListener("keypress", function(event) {
@@ -254,16 +285,46 @@ function postMessage(){
                     data: {'message': text}
                 });
                 request.done(function (output) {
-                // Code à jouer en cas d'exécution sans erreur du script PHP
-                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+        let dateActuelle = new Date();
+        let jour = dateActuelle.getDate();
+        let mois = dateActuelle.getMonth() + 1;
+        let annee = dateActuelle.getFullYear();
+        let heures = dateActuelle.getHours();
+        let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
+        let secondes = dateActuelle.getSeconds();
+        let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
+        var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
 
-                // Ajoute le message à la boîte de chat
-                const chatBox = document.getElementById('msg');
-                const newMessage = document.createElement('p');
-                newMessage.className = 'message-envoye';
-                newMessage.textContent = text;
-                chatBox.appendChild(newMessage);
-            });
+        // Code à jouer en cas d'exécution sans erreur du script PHP
+        document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+        // Ajoute le message à la boîte de chat
+        const chatBox = document.getElementById('msg');
+        const newMessage = document.createElement('div');
+        newMessage.className = 'div_message';
+
+        // Ajouter le pseudo
+        const pseudoSpan = document.createElement('span');
+        pseudoSpan.className = 'message-pseudo align-right';
+        pseudoSpan.textContent = pseudo;
+        pseudoSpan.setAttribute('data-pseudo', pseudo);
+        newMessage.appendChild(pseudoSpan);
+
+        // Ajouter le message
+        const messageP = document.createElement('p');
+        messageP.className = 'message message-envoye';
+        messageP.textContent = text;
+        newMessage.appendChild(messageP);
+
+        // Ajouter la date
+        const dateSpan = document.createElement('span');
+        dateSpan.className = 'message-date align-right';
+        dateSpan.textContent = dateHeureFormattee;
+        dateSpan.setAttribute('data-date', dateHeureFormattee);
+        newMessage.appendChild(dateSpan);
+
+        chatBox.appendChild(newMessage);
+    });
 
             document.getElementById("myBtn").click();
             msg.innerHTML="msg";
