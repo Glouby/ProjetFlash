@@ -3,8 +3,16 @@ require '../../utils/common.php';
 require '../../utils/database.php';
 $NamePage = "game";
 ?>
+<?php 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_SESSION['userId']) && !empty($_POST['message'])){
+            postMessage();        
+        } else {
+            getMessage(); 
+        }
+    }
+?>
 <?php
-
 function getMessage(){
     global $pdo;
     $resultat = $pdo -> query("SELECT message, pseudo, date_heure_m 
@@ -12,7 +20,6 @@ function getMessage(){
     JOIN Message ON Utilisateur.id_u = Message.id_exp
     WHERE date_heure_m <= NOW() + INTERVAL 1 DAY");
     $messages = $resultat -> fetchAll();
-    echo json_encode($messages);
 }
 
 function postMessage(){
@@ -25,7 +32,6 @@ function postMessage(){
         ":userId" => $userId, 
         ":message"=> $message
     ]);
-    echo json_encode($message);
 }
 ?>
 
@@ -155,52 +161,64 @@ function postMessage(){
         </tr>
     </table>
     <!-- chat du jeu -->
-    <script>
-
-    </script>
     <section class="chat">
         <div class="chat-box">
             <div class="chat-header">
             <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
                 Chat General
             </div>
-            <?php
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
-                if(isset($_SESSION['userId']) && !empty($_POST['message'])){
-                    postMessage();
-                }else{ 
-                    getMessage();
-                }
-            }
-            ?>
-            <form method="POST" action="" class="chat-messages">
-                <div class="chat-input">
-                    <input type="text" name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
-                    <input type="button" onclick="functionAjax()" value="Envoyer" id="Envoyer">
-                </div>
-            </form>
+        
+            <div id="msg" class="mot">
+                
+            </div>
+        
+            <div class="chat-input">
+                <input type="text" name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
+                <input type="button" onclick="functionAjax()" value="Envoyer" id="Envoyer">
+            </div>
         </div>  
     </section>
     <?php
-        require SITE_ROOT . 'partials/footer.php';
+        require SITE_ROOT.'partials/footer.php';
     ?>
     <a href="#" class="le_btn">^</a>
+
     <script>
-    
-    function functionAjax(){
-        var text = document.getElementById("messagerie").value;
-        let request =
-    $.ajax({
-        type: "POST",
-        url: "index.php", 
-        data: {'message': text}
-    });
-    request.done(function (output) {
-        document.getElementById("messagerie").animate([
-        
-        ]);
-        });
-    }
+        function functionAjax(){
+            var text = document.getElementById("messagerie").value;
+            let request =
+            $.ajax({
+                type: "POST",
+                url: "index.php", 
+                data: {'message': text}
+            });
+            request.done(function (output) {
+                    document.getElementById('messagerie').value = ''; 
+                    const chatBox = document.getElementById('msg');
+                    chatBox.innerHTML += '<p>' + text + '</p>';
+            });
+        }
+        // envoie avec enter
+        var input = document.getElementById("messagerie");
+        input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            var text = document.getElementById("messagerie").value;
+            let request =
+            $.ajax({
+                type: "POST",
+                url: "index.php", 
+                data: {'message': text}
+            });
+            request.done(function (output) {
+                    // Code à jouer en cas d'éxécution sans erreur du script du PHP
+                    document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+                    // Ajoute le message à la boîte de chat
+                    const chatBox = document.getElementById('msg');
+                    chatBox.innerHTML += '<p>' + text + '</p>';
+            });
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+        }});
     </script>
 </body>
 </html>

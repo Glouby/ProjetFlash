@@ -809,7 +809,7 @@ body{
     color: rgb(204, 204, 204, 50);
 }
 
-.chat #send-button {
+.chat .send-button {
     background-color: white;
     color: black;
     border: none;
