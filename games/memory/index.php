@@ -226,9 +226,9 @@ function postMessage(){
             var text = document.getElementById("messagerie").value.trim();
 
             // Vérifiez si le message n'est pas vide
-            if (text === "") {
+            if (text.length < 3) {
                 // Affichez un message d'erreur ou effectuez une action appropriée
-                alert("Veuillez entrer un message avant d'envoyer.");
+                alert("Veuillez entrer un message de plus de 2 caractère avant d'envoyer.");
 
                 // Arrêtez l'exécution de la fonction
                 return;

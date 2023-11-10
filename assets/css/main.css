@@ -659,8 +659,9 @@ body{
 .chat .chat-header {
     background-color: #373654;
     color: white;
-    padding: 0.694vw;
-    font-size: 1.12vw;
+    padding-right: 13vw;
+    font-size: 1vw;
+    position: absolute;
 }
 
 .chat .chat-messages {
