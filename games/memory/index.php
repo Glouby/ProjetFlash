@@ -74,34 +74,34 @@ function postMessage(){
 
 
     <?php if(isset($_SESSION['userId'])) :?>
-        <label for="choixTheme" style="color: white; padding-left: 550px;">Sélectionnez un Thème :</label>
-            <select id="choixTheme" style="background-color: #737287; padding: 8px; border-radius: 10px;">
+        <label for="choixTheme" style="color: white; padding-left: 38.194vw;">Sélectionnez un Thème :</label>
+            <select id="choixTheme" style="background-color: #737287; padding: 0.556vw; border-radius: 0.694vw;">
                 <option value="">Thèmes</option>
                 <option value="Espace">ESPACE</option>
                 <option value="Jeux videos">JEUX VIDEOS</option>
                 <option value="Mangas">MANGA</option>
             </select>
             
-            <p id="afficherTheme" style="color: orange; padding-left: 550px; font-size: 20px;"></p>
+            <p id="afficherTheme" style="color: orange; padding-left: 38.194vw; font-size: 1.389vw;"></p>
 
 
-    <label for="choixNiv" style="color: white; padding-left: 550px;">Sélectionnez le niveau :</label>
-        <select id="choixNiv"  style="background-color: #737287; padding: 8px; border-radius:10px;">
+    <label for="choixNiv" style="color: white; padding-left: 38.194vw;">Sélectionnez le niveau :</label>
+        <select id="choixNiv"  style="background-color: #737287; padding: 0.556vw; border-radius:0.694vw;">
             <option value="">Niveaux</option>
             <option value="Facile">FACILE</option>
             <option value="Moyen">MOYEN</option>
             <option value="Difficile">DIFFICILE</option>
         </select>
         
-        <p id="afficherNiv" style="color: orange; padding-left: 550px; font-size: 20px;"></p>
+        <p id="afficherNiv" style="color: orange; padding-left: 38.194vw; font-size: 1.389vw;"></p>
         
 
-        <button id="lancerPartie" onclick="startTimerAndPartie()" style="margin-left: 650px; background-color: orange; border-radius: 2vw; padding: 20px; margin-top: 50px;" disabled>Lancer la Partie</button>
+        <button id="lancerPartie" onclick="startTimerAndPartie()" style="margin-left: 45.139vw; background-color: orange; border-radius: 2vw; padding: 1.389vw; margin-top: 3.472vw;font-size: 1.2vw;" disabled>Lancer la Partie</button>
 
     <script src="jeu.js"></script>
 
 
-    <div id="timer" style="color: white; text-align: center; border: 0.1vw solid orange; margin-top: 5vw; margin-left: 15%; width: 10vw; height: 4vw;">
+    <div id="timer" style="color: white; text-align: center; border: 0.1vw solid orange; margin-top: 5vw; margin-left: 15%; width: 10vw; height: 4vw; font-size:1.2vw;">
             <div id="timer-text" style=" color: white; text-align: center; font-size: 1.2vw; margin: 1.2vw;">00:00:00</div>
     </div>
 
@@ -222,61 +222,83 @@ function postMessage(){
 
     <script>
         function functionAjax() {
-    var text = document.getElementById("messagerie").value;
+            // Récupérez le texte du message
+            var text = document.getElementById("messagerie").value.trim();
 
-    let request = $.ajax({
-        type: "POST",
-        url: "index.php",
-        data: { 'message': text }
-    });
+            // Vérifiez si le message n'est pas vide
+            if (text === "") {
+                // Affichez un message d'erreur ou effectuez une action appropriée
+                alert("Veuillez entrer un message avant d'envoyer.");
 
-    request.done(function (output) {
-        let dateActuelle = new Date();
-        let jour = dateActuelle.getDate();
-        let mois = dateActuelle.getMonth() + 1;
-        let annee = dateActuelle.getFullYear();
-        let heures = dateActuelle.getHours();
-        let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
-        let secondes = dateActuelle.getSeconds();
-        let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
-        var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
+                // Arrêtez l'exécution de la fonction
+                return;
+            }
 
-        // Code à jouer en cas d'exécution sans erreur du script PHP
-        document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+            // Continuez avec la requête AJAX car le message n'est pas vide
+            let request = $.ajax({
+                type: "POST",
+                url: "index.php",
+                data: { 'message': text }
+            });
 
-        // Ajoute le message à la boîte de chat
-        const chatBox = document.getElementById('msg');
-        const newMessage = document.createElement('div');
-        newMessage.className = 'div_message';
+            request.done(function (output) {
+                let dateActuelle = new Date();
+                let jour = dateActuelle.getDate();
+                let mois = dateActuelle.getMonth() + 1;
+                let annee = dateActuelle.getFullYear();
+                let heures = dateActuelle.getHours();
+                let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
+                let secondes = dateActuelle.getSeconds();
+                let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
+                var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
 
-        // Ajouter le pseudo
-        const pseudoSpan = document.createElement('span');
-        pseudoSpan.className = 'message-pseudo align-right';
-        pseudoSpan.textContent = pseudo;
-        pseudoSpan.setAttribute('data-pseudo', pseudo);
-        newMessage.appendChild(pseudoSpan);
+                // Code à jouer en cas d'exécution sans erreur du script PHP
+                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
 
-        // Ajouter le message
-        const messageP = document.createElement('p');
-        messageP.className = 'message message-envoye';
-        messageP.textContent = text;
-        newMessage.appendChild(messageP);
+                // Ajoute le message à la boîte de chat
+                const chatBox = document.getElementById('msg');
+                const newMessage = document.createElement('div');
+                newMessage.className = 'div_message';
 
-        // Ajouter la date
-        const dateSpan = document.createElement('span');
-        dateSpan.className = 'message-date align-right';
-        dateSpan.textContent = dateHeureFormattee;
-        dateSpan.setAttribute('data-date', dateHeureFormattee);
-        newMessage.appendChild(dateSpan);
+                // Ajouter le pseudo
+                const pseudoSpan = document.createElement('span');
+                pseudoSpan.className = 'message-pseudo align-right';
+                pseudoSpan.textContent = pseudo;
+                pseudoSpan.setAttribute('data-pseudo', pseudo);
+                newMessage.appendChild(pseudoSpan);
 
-        chatBox.appendChild(newMessage);
-    });
-}
+                // Ajouter le message
+                const messageP = document.createElement('p');
+                messageP.className = 'message message-envoye';
+                messageP.textContent = text;
+                newMessage.appendChild(messageP);
+
+                // Ajouter la date
+                const dateSpan = document.createElement('span');
+                dateSpan.className = 'message-date align-right';
+                dateSpan.textContent = dateHeureFormattee;
+                dateSpan.setAttribute('data-date', dateHeureFormattee);
+                newMessage.appendChild(dateSpan);
+
+                chatBox.appendChild(newMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
 
 
         var input = document.getElementById("messagerie");
         input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
+            var text = document.getElementById("messagerie").value.trim();
+
+            // Vérifiez si le message n'est pas vide
+            if (text === "") {
+                // Affichez un message d'erreur ou effectuez une action appropriée
+                alert("Veuillez entrer un message avant d'envoyer.");
+
+                // Arrêtez l'exécution de la fonction
+                return;
+            }
             var text = document.getElementById("messagerie").value;
             let request =
             $.ajax({
@@ -324,6 +346,7 @@ function postMessage(){
         newMessage.appendChild(dateSpan);
 
         chatBox.appendChild(newMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
     });
 
             document.getElementById("myBtn").click();
@@ -511,7 +534,7 @@ function tableCreate() {
     shuffle(tab);
     const tableau = document.getElementById('tableau');
     const tbl = document.createElement('table');
-    tbl.style.width = '100px';
+    tbl.style.width = '6.944vw';
 
     for (let i = 0; i < choix_niv; i++) {
         const tr = tbl.insertRow();
