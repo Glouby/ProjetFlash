@@ -49,3 +49,17 @@ li:hover a {
     margin: 0;
     font-weight: 600;
 }
+
+.strength-bar-container {
+    margin-top: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}

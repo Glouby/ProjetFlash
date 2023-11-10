@@ -26,7 +26,8 @@ if($user != null){
     $_SESSION['userId'] = $user->id_u;
 }
 ?>
-
+ 
+ 
 
 <!DOCTYPE html>
 <html lang="fr">

@@ -11,6 +11,8 @@ $NamePage = "game";
 <?php
         require SITE_ROOT . 'partials/head.php';
     ?>
+
+
 <body class="jeu">
 <?php
         require SITE_ROOT . 'partials/header.php';
@@ -19,10 +21,43 @@ $NamePage = "game";
         <h1>JEU</h1>
     </div> 
 
-    <div class="timer">
-        <div class="timer-texte">TIMER : 2:17</div>
+
+
+    <div id="timer" style="color: white; text-align: center; border: 0.1vw solid orange; margin-top: 5vw; margin-left: 15%; width: 10vw; height: 4vw;">
+        <div id="timer-text" style=" color: white; text-align: center; font-size: 1.2vw; margin: 1.2vw;">00:00:00</div>
+    <button id="startButton" onclick="startTimer()">Démarrer</button>
     </div>
-    <table class="tableau">
+    <script>
+        let timerInterval;
+        let startTime = 0;
+        let isRunning = false;
+
+        function formatTime(ms) {
+            const minutes = Math.floor(ms / 60000);
+            const seconds = Math.floor((ms % 60000) / 1000);
+            const milliseconds = (ms % 1000).toString().padStart(3, '0');
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds}`;
+        }
+
+        function updateChronometer() {
+            const currentTime = Date.now() - startTime;
+            document.getElementById('timer').textContent = formatTime(currentTime);
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                startTime = Date.now() - startTime;
+                timerInterval = setInterval(updateChronometer, 10);
+                isRunning = true;
+            }
+        }
+
+       
+    </script>
+
+ </div>
+
+    <table class="tableau, hidden">
         <tr>
             <td><img src= "<?= PROJECT_FOLDER ?>assets/image/carte.jpeg" class='carte'></td>
             <td><img src= "<?= PROJECT_FOLDER ?>assets/image/carte.jpeg" class='carte'></td>
@@ -132,6 +167,7 @@ $NamePage = "game";
         </tr>
     </table>
 
+    
     <div class="chat">
         <div class="chat-box">
             <div class="chat-header">

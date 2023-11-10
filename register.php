@@ -95,6 +95,7 @@ $les_pseudo = $tt_pseudo->fetchAll();
                     - Comprendre au moins un caractère spécial <br> </p>
                 <?php endif; ?>
              </div>
+           
             <div>
                 <label for="password"></label>
                 <input class="box" type="password" name="conf_password" id="password" placeholder="Confirmez le mot de passe">
