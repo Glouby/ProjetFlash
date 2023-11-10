@@ -96,10 +96,10 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
 
         <div class="aligner">
             <div class="motdepass">
-                <h2>Changement de mot de passe</h2>
+                <h2>Changement email</h2>
             </div>
             <div class="adressmail">
-                <h2>Changement email</h2>
+                <h2>Changement de mot de passe</h2>
             </div>
         </div>
 
@@ -167,7 +167,11 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                     </div>
                     <div class="espace">
                         <label for="new_password"></label>
-                        <input class="box" type="password" name="new_password" id="password" placeholder="Nouveau Mot de passe">
+                        <input class="box" type="password" name="new_password" id="password" oninput="validatePassword()" placeholder="Nouveau Mot de passe">
+                        <div class="strength-bar-container" style="margin-top: 10px; height: 10px; background-color: #100e2e; border-radius: 4px; overflow: hidden;">
+                        <div id="strength-bar" style="height: 100%; width: 0; transition: width 0.3s ease; margin-top:0;"></div>
+                        </div>
+                        <p id="message"></p>
 
                         <?php if (preg_match($pattern_password, $new_password??'') && $validation_mdp != 4):
                             $validation_mdp += 1;?>
@@ -180,6 +184,7 @@ $pattern_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/'
                             - Comprendre au moins une majuscule <br>
                             - Comprendre au moins un caractère spécial <br> </p>
                         <?php endif; ?>
+                        <script src="register.js"></script>
                     </div>
                     <div class="espace">
                         <label for="conf_password"></label>
