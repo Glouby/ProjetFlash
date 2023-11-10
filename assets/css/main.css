@@ -651,7 +651,10 @@ body{
     background-color: #fff;
     border: 0;
     border-radius: 0.347vw;
+    max-height: 13.889vw; /* Ajustez la hauteur maximale en pixels selon vos besoins */
+    overflow-y: auto; /* Ajoutez le défilement vertical automatique */
 }
+
 
 .chat .chat-header {
     background-color: #373654;
@@ -667,11 +670,6 @@ body{
     border-radius: 0.347vw;
 }
 
-.chat .message {
-    margin: 0.694vw 0;
-    border-radius: 5%;
-    width: 6.944vw;
-}
 
 .chat .Hour-moi {
     font-weight: bold;
@@ -784,7 +782,6 @@ body{
 
 .chat .chat-input {
     display: flex;
-    padding: 3.194vw 0 0.694vw 0;
   }
 .chat #message-input {
     flex: 1;
@@ -857,7 +854,7 @@ body{
     justify-content: space-around;
     background-color: #373654;
     border: 0.5vw solid orange;
-    border-radius: 30px;
+    border-radius: 2.083vw;
 }
 
 .boutique .Piece-Dollar{
@@ -878,7 +875,7 @@ body{
     border: 2.083vw;
     width: 15vw;
     height: 15vw;
-    border-radius: 29.5px;
+    border-radius: 2.049vw;
 }
 
 .boutique .lettre{
@@ -917,7 +914,7 @@ body{
     width: 6.944vw;
     margin: 0 2.431vw 0 0;
     transform-style: preserve-3d;
-    perspective: 1000px;
+    perspective: 69.444vw;
     cursor: pointer;
     transition: 1s;
 }
@@ -936,17 +933,65 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 20px;
-    border: 2px solid orange;
+    padding: 1.389vw;
+    border: 0.139vw solid orange;
     text-align: center;
     z-index: 1000;
 }
 
 .victory-popup p {
-    font-size: 18px;
+    font-size: 1.25vw;
     color: black;
 }
 
 .victory-popup.show {
     display: block;
+}
+
+
+.message-envoye,
+.message-recu {
+    max-width: 30%;
+    margin: 0;
+    padding: 0.694vw;
+    border-radius: 0.694vw;
+    word-wrap: break-word;
+}
+
+.message-envoye {
+    margin-left: 12vw;
+    background-color: gray;
+    color: white;
+}
+
+.message-recu {
+    background-color: blue;
+    color: white;
+}
+
+.chat .message-pseudo{
+    font-size: 0.7vw;
+}
+.chat  .message-date{
+    font-size: 0.7vw;
+    margin-bottom: 1vw;
+}
+
+.chat .div_message{
+    margin-top: 1vw;
+}
+
+.chat .align-left {
+    margin-left: 0.4vw;
+}
+
+.chat .align-right {
+    margin-left: 12vw;
+}
+
+.jeu label{
+    font-size: 1.2vw;
+}
+.jeu select{
+    font-size: 1vw;
 }

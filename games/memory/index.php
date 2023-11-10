@@ -2,9 +2,60 @@
 require '../../utils/common.php';
 require '../../utils/database.php';
 $NamePage = "game";
-
 ?>
 
+<?php 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_SESSION['userId']) && !empty($_POST['message'])){
+                postMessage();        
+            } else {
+                getMessage(); 
+        }
+    }
+?>
+<?php
+function getMessage() {
+    global $pdo;
+    $userId = $_SESSION['userId'];
+    $resultat = $pdo->query("SELECT message, pseudo, date_heure_m, id_exp 
+        FROM Utilisateur 
+        JOIN Message ON Utilisateur.id_u = Message.id_exp
+        WHERE date_heure_m >= NOW() - INTERVAL 1 DAY
+        ORDER BY date_heure_m ASC");
+
+    $messages = $resultat->fetchAll();
+
+    foreach ($messages as $message) {
+        $messageContent = $message->message;
+        $messageSender = $message->id_exp;
+        $pseudo = $message->pseudo;
+        $date = $message->date_heure_m;
+        $class = ($messageSender == $userId) ? 'message-envoye' : 'message-recu';
+        $alignClass = ($messageSender == $userId) ? 'align-right' : 'align-left';
+    
+        echo "<div class='div_message'> 
+            <span class='message-pseudo $alignClass' data-pseudo='$pseudo' data-date='$date'>$pseudo</span>
+            <p class='message $class'>$messageContent</p>
+            <span class='message-date $alignClass' data-date='$date'>$date</span>
+        </div>";
+    }    
+}
+
+
+
+
+function postMessage(){
+    global $pdo;
+    $userId = $_SESSION['userId'];
+    $message = $_POST['message'];
+    $pdoStatement = $pdo->prepare("INSERT INTO Message (id_j, id_exp, message, date_heure_m) VALUES ( :idJ, :userId, :message, NOW())");
+    $pdoStatement -> execute([ 
+        "idJ" => 1,
+        ":userId" => $userId, 
+        ":message"=> $message
+    ]);
+}
+?>
 
 
 <!DOCTYPE html>
@@ -23,34 +74,34 @@ $NamePage = "game";
 
 
     <?php if(isset($_SESSION['userId'])) :?>
-        <label for="choixTheme" style="color: white; padding-left: 550px;">Sélectionnez un Thème :</label>
-            <select id="choixTheme" style="background-color: #737287; padding: 8px; border-radius: 10px;">
+        <label for="choixTheme" style="color: white; padding-left: 38.194vw;">Sélectionnez un Thème :</label>
+            <select id="choixTheme" style="background-color: #737287; padding: 0.556vw; border-radius: 0.694vw;">
                 <option value="">Thèmes</option>
                 <option value="Espace">ESPACE</option>
                 <option value="Jeux videos">JEUX VIDEOS</option>
                 <option value="Mangas">MANGA</option>
             </select>
             
-            <p id="afficherTheme" style="color: orange; padding-left: 550px; font-size: 20px;"></p>
+            <p id="afficherTheme" style="color: orange; padding-left: 38.194vw; font-size: 1.389vw;"></p>
 
 
-    <label for="choixNiv" style="color: white; padding-left: 550px;">Sélectionnez le niveau :</label>
-        <select id="choixNiv"  style="background-color: #737287; padding: 8px; border-radius:10px;">
+    <label for="choixNiv" style="color: white; padding-left: 38.194vw;">Sélectionnez le niveau :</label>
+        <select id="choixNiv"  style="background-color: #737287; padding: 0.556vw; border-radius:0.694vw;">
             <option value="">Niveaux</option>
             <option value="Facile">FACILE</option>
             <option value="Moyen">MOYEN</option>
             <option value="Difficile">DIFFICILE</option>
         </select>
         
-        <p id="afficherNiv" style="color: orange; padding-left: 550px; font-size: 20px;"></p>
+        <p id="afficherNiv" style="color: orange; padding-left: 38.194vw; font-size: 1.389vw;"></p>
         
 
-        <button id="lancerPartie" onclick="startTimerAndPartie()" style="margin-left: 650px; background-color: orange; border-radius: 2vw; padding: 20px; margin-top: 50px;" disabled>Lancer la Partie</button>
+        <button id="lancerPartie" onclick="startTimerAndPartie()" style="margin-left: 45.139vw; background-color: orange; border-radius: 2vw; padding: 1.389vw; margin-top: 3.472vw;font-size: 1.2vw;" disabled>Lancer la Partie</button>
 
     <script src="jeu.js"></script>
 
 
-    <div id="timer" style="color: white; text-align: center; border: 0.1vw solid orange; margin-top: 5vw; margin-left: 15%; width: 10vw; height: 4vw;">
+    <div id="timer" style="color: white; text-align: center; border: 0.1vw solid orange; margin-top: 5vw; margin-left: 15%; width: 10vw; height: 4vw; font-size:1.2vw;">
             <div id="timer-text" style=" color: white; text-align: center; font-size: 1.2vw; margin: 1.2vw;">00:00:00</div>
     </div>
 
@@ -149,45 +200,160 @@ $NamePage = "game";
         </div>
 
         
-        <div class="chat">
-            <div class="chat-box">
-                <div class="chat-header">
-                <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
-                    Chat General
-                </div>
+        <section class="chat">
+        <div class="chat-box">
+            <div class="chat-header">
+            <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Photo'>
+                Chat General
+            </div>
         
-                <div class="chat-messages">
-        
-                    <div class="Moi">Moi</div> 
-                    <div class="Mes-messages">
-                        <div class="mot"> Hello </div>
-                    </div>
-                    <div class="Hour-moi"> Aujoud'hui à 15h22 </div>
-        
-                    <div class="message">
-        
-                    <div class="user">User 1</div>
-                        <div class="image">
-                        <img src= "<?= PROJECT_FOLDER ?>assets/image/chat.jpg" class='Pdp'>
-                        <div class="text"> hvjdhzlkdhazpodbjrz <br>
-                                dklazjazlkdezalkdjazlkdjzakdjazldkjazkldjazl
-                        </div>
-                    </div>  
-                    <div class="Hour-User">Aujoud'hui à 15h30</div>
-                        <div class="Moi2">Moi</div> 
-                        <div class="Mes-messages2">
-                            <div class="mot2"> wowy c'est incroyable </div>
-                        </div>
+            <div id="msg" class="chat-messages">
+                <?php getMessage(); ?>
+            </div>
 
-                        </div>
-                    <div class="Hour-moi2"> Aujoud'hui à 15h22 </div>
-                    <div class="chat-input">
-                        <input type="text" id="message-input" placeholder="Votre message...">
-                        <button id="send-button">Envoyer</button>
-                    </div>
-                </div>
-            </div>  
-        </div>
+        
+            <div class="chat-input">
+                <input type="text" name="message" class="message" id="messagerie" placeholder="Votre message..."></input>
+                <input type="button" onclick="functionAjax()" value="Envoyer" id="Envoyer">
+            </div>
+        </div>  
+    </section>
+    <a href="#" class="le_btn">^</a>
+
+    <script>
+        function functionAjax() {
+            // Récupérez le texte du message
+            var text = document.getElementById("messagerie").value.trim();
+
+            // Vérifiez si le message n'est pas vide
+            if (text === "") {
+                // Affichez un message d'erreur ou effectuez une action appropriée
+                alert("Veuillez entrer un message avant d'envoyer.");
+
+                // Arrêtez l'exécution de la fonction
+                return;
+            }
+
+            // Continuez avec la requête AJAX car le message n'est pas vide
+            let request = $.ajax({
+                type: "POST",
+                url: "index.php",
+                data: { 'message': text }
+            });
+
+            request.done(function (output) {
+                let dateActuelle = new Date();
+                let jour = dateActuelle.getDate();
+                let mois = dateActuelle.getMonth() + 1;
+                let annee = dateActuelle.getFullYear();
+                let heures = dateActuelle.getHours();
+                let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
+                let secondes = dateActuelle.getSeconds();
+                let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
+                var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
+
+                // Code à jouer en cas d'exécution sans erreur du script PHP
+                document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+                // Ajoute le message à la boîte de chat
+                const chatBox = document.getElementById('msg');
+                const newMessage = document.createElement('div');
+                newMessage.className = 'div_message';
+
+                // Ajouter le pseudo
+                const pseudoSpan = document.createElement('span');
+                pseudoSpan.className = 'message-pseudo align-right';
+                pseudoSpan.textContent = pseudo;
+                pseudoSpan.setAttribute('data-pseudo', pseudo);
+                newMessage.appendChild(pseudoSpan);
+
+                // Ajouter le message
+                const messageP = document.createElement('p');
+                messageP.className = 'message message-envoye';
+                messageP.textContent = text;
+                newMessage.appendChild(messageP);
+
+                // Ajouter la date
+                const dateSpan = document.createElement('span');
+                dateSpan.className = 'message-date align-right';
+                dateSpan.textContent = dateHeureFormattee;
+                dateSpan.setAttribute('data-date', dateHeureFormattee);
+                newMessage.appendChild(dateSpan);
+
+                chatBox.appendChild(newMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+
+
+        var input = document.getElementById("messagerie");
+        input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            var text = document.getElementById("messagerie").value.trim();
+
+            // Vérifiez si le message n'est pas vide
+            if (text === "") {
+                // Affichez un message d'erreur ou effectuez une action appropriée
+                alert("Veuillez entrer un message avant d'envoyer.");
+
+                // Arrêtez l'exécution de la fonction
+                return;
+            }
+            var text = document.getElementById("messagerie").value;
+            let request =
+            $.ajax({
+                    type: "POST",
+                    url: "index.php", 
+                    data: {'message': text}
+                });
+                request.done(function (output) {
+        let dateActuelle = new Date();
+        let jour = dateActuelle.getDate();
+        let mois = dateActuelle.getMonth() + 1;
+        let annee = dateActuelle.getFullYear();
+        let heures = dateActuelle.getHours();
+        let minutes = dateActuelle.getMinutes().toString().padStart(2, '0');
+        let secondes = dateActuelle.getSeconds();
+        let dateHeureFormattee = `${annee}-${mois}-${jour} ${heures}:${minutes}:${secondes}`;
+        var pseudo = document.querySelector('.message-pseudo.align-right').dataset.pseudo;
+
+        // Code à jouer en cas d'exécution sans erreur du script PHP
+        document.getElementById('messagerie').value = ''; // Efface le champ de saisie
+
+        // Ajoute le message à la boîte de chat
+        const chatBox = document.getElementById('msg');
+        const newMessage = document.createElement('div');
+        newMessage.className = 'div_message';
+
+        // Ajouter le pseudo
+        const pseudoSpan = document.createElement('span');
+        pseudoSpan.className = 'message-pseudo align-right';
+        pseudoSpan.textContent = pseudo;
+        pseudoSpan.setAttribute('data-pseudo', pseudo);
+        newMessage.appendChild(pseudoSpan);
+
+        // Ajouter le message
+        const messageP = document.createElement('p');
+        messageP.className = 'message message-envoye';
+        messageP.textContent = text;
+        newMessage.appendChild(messageP);
+
+        // Ajouter la date
+        const dateSpan = document.createElement('span');
+        dateSpan.className = 'message-date align-right';
+        dateSpan.textContent = dateHeureFormattee;
+        dateSpan.setAttribute('data-date', dateHeureFormattee);
+        newMessage.appendChild(dateSpan);
+
+        chatBox.appendChild(newMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+            document.getElementById("myBtn").click();
+            msg.innerHTML="msg";
+        }});
+
+    </script>
         <?php else :?>
         <p style="text-align:center; font-size: 2vw;"> Vous n'êtes pas connecté(e)</p>
     <?php endif ?>
@@ -368,7 +534,7 @@ function tableCreate() {
     shuffle(tab);
     const tableau = document.getElementById('tableau');
     const tbl = document.createElement('table');
-    tbl.style.width = '100px';
+    tbl.style.width = '6.944vw';
 
     for (let i = 0; i < choix_niv; i++) {
         const tr = tbl.insertRow();
